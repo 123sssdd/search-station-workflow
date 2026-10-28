@@ -4,6 +4,21 @@
 每条指令修订写明：日期、版本、改了什么、来源决策文件、影响角色。改指令一律 B 类，须用户确认后生效。
 CHANGELOG 由 Memory 唯一写入（v3 第 13 条）。「指令 v3」「P1 开源重构」「v3 纯净粘贴版」等条目经 Memory 复核收口（执行工占位已并入）。
 
+## 2026-10-29 — 用户 02:57 拍板 + 01:18 搜索时长
+### 指令 2026-10-29 02:57 — 用户拍板（来源 learning-loop `decisions/pending-user/20261029/02-用户拍板-0257.md`，用户原话经 BrainStorm 01 转达；不开会）
+影响：全部角色。commit 5f5d23a。
+- Added【v3-18】Exa 全站可用，仅用于技术文章和 GitHub 仓库；key 只从环境变量 `EXA_API_KEY` 读取，不打印不落盘；每轮记录额度。
+- Added【v3-19】Reddit 不交 API 表单，改用浏览器网页阅读，由用户本人登录；不导出 cookie、不走代理。
+- Changed【v3-20】计分：被评对象自身仓库不计平台占比。
+- Changed【v3-21】找项目候选池加 `good-first-issues:>=3`，help wanted 兜底。
+- Added【v3-22】搜索计划模板加 `site:` 问句模板。
+- Added【v3-23】Agent Reach 和闲鱼买 key 列为备选，只推荐给用户决定，bot 不执行。
+- Fixed：Sketchmind manifest -37/-50 URL（Sketchmind 2dd3d50）。
+### 搜索计划 2026-10-29 01:18 — 取消默认时长
+来源：用户 01:18 原话（经 BrainStorm 01 转达）；取代 01:16「A/B 45min、C 30min 默认」一条（未生效即撤回）。影响：开轮 bot（BrainStorm 01/02）、Searcher。
+- Changed：不设默认搜索时长，开轮 bot 在档位范围内自定（A 45–180min、B ≤90min、C ≤30min），并在计划卡写理由。
+- 文件：`decisions/search-plan/01-20261028-1715-final.md` 第 7–9 行、`plan-实测记录节.md` 第 6 行（learning-loop 本地，未入库）。
+
 ## 仓库 2026-10-28 — 目录重构：instance-xieyongzhen/ 与 archive/
 来源：用户 t175u（自用版独立文件夹、加 xieyongzhen 后缀；清理 templates/bots 与 bots 两个目录）。指令语义未改。
 ### Added
