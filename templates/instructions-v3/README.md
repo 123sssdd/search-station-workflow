@@ -1,17 +1,19 @@
-# templates/instructions-v3/ · 现行 v3 纯净粘贴版
+# templates/instructions-v3/ · 复刻用纯净最终版（v3）
 
-给使用者**直接粘贴到各 bot 指令框**的完整指令（连贯正文，无版本增量编号）。
+**给谁用：** 想复刻这套情报站的人。拿最终可运行正文即可，不需要条款编号和改动日期。
 
-## 与档案版的区别
+**本站自己人 / 各 bot：** 继续用带 `【v3-n】` 的档案版（见下表），方便对变更、写 CHANGELOG、例会复盘。
 
-| 文件 | 用途 |
-|------|------|
-| **本目录** `templates/instructions-v3/` | 纯净粘贴版：去掉 `【v3-n】` /「v1 保留」等增量话术，角色+公共条款分文件，便于复制 |
-| `bots/bot-instructions-v3.md`、`templates/bot-instructions-v3.md` | 档案/对照稿：保留条款编号与决策溯源，方便 diff 与 CHANGELOG |
+## 两套怎么分工
 
-两套内容语义一致；改指令时先改生效源，再同步本目录与档案版。
+| 版本 | 路径 | 受众 | 特点 |
+|------|------|------|------|
+| **纯净最终版（本目录）** | `templates/instructions-v3/` | 复刻者、对外文档 | 连贯全文，无增量编号 |
+| **档案版（带【v3-n】）** | `bots/bot-instructions-v3.md`、`templates/bot-instructions-v3.md`；本站生效源 `/workspace/learning-loop/bot-instructions.md` | 本站 bot 与维护者 | 保留条款编号与生效时间，便于追溯 |
 
-## 如何粘贴
+两套语义一致。本站改指令：先改档案/生效源 → 你确认 → 再同步生成/更新本目录纯净版。
+
+## 复刻者如何粘贴
 
 1. 打开本目录对应角色文件（如 `01-brainstorm-01.md`），**全文复制**。
 2. 再打开 `00-common.md`，全文接在后面。
@@ -23,8 +25,8 @@
 
 | 占位符 | 含义 |
 |--------|------|
-| `<WORKSPACE>` | 工作区根路径（本实例常用 `/workspace/learning-loop`） |
-| `<AGENT_ID_01>` … `<AGENT_ID_TODOS>` | 各 bot 的 agent UUID |
+| `<WORKSPACE>` | 工作区根路径（示例：`/workspace/learning-loop`） |
+| `<AGENT_ID_01>` … `<AGENT_ID_TODOS>` | 各 bot 的 agent id |
 | `<NOTION_HUB_URL>` | Notion 学习中枢页 |
 | `<NOTION_TODOS_DB_URL>` | Notion Todos 库 |
 
