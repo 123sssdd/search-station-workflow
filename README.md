@@ -20,7 +20,7 @@
 ## 快速开始
 
 1. 读 [`docs/setup-from-scratch.md`](docs/setup-from-scratch.md)，按步骤在新账号建 8 个 bot。
-2. 把 `templates/bots/<role>.md` 的指令粘到对应 bot（再把占位符换成你的实际值）。
+2. 推荐把 `templates/instructions-v3/` 对应角色 + `00-common.md`（01/02/Searcher/质量评估再加 `90-search-plan.md`）粘到对应 bot，并替换占位符；也可用 `templates/bots/<role>.md`。
 3. 复制 `config/station.yaml.example` → `config/station.yaml`，并复制 `config/.env.example`，只在本地填真实值（`.env` 不进仓库）。（旧名 `config.example.yaml` 仅为兼容指针。）
 4. 连接 Notion 并建五库（schema 见 setup 文档）；部署 SearXNG 与 RSSHub；登录 Firecrawl CLI。
 5. 每个 bot 建好 00:00 例会 / 00:40 兜底定时任务。
@@ -43,8 +43,9 @@ config/
   .env.example / backends.yaml / searxng-settings.example.yml
 templates/
   bots/<role>.md              8 角色通用指令模板
-  bot-instructions-v3.md      现行 v3 全文（占位符）
+  bot-instructions-v3.md      现行 v3 档案/对照稿（带【v3-n】编号）
   bot-instructions-v3-draft.md  v3 草案（已生效，备查）
+  instructions-v3/            纯净粘贴版（推荐给使用者直接粘贴，见该目录 README）
   evidence/ / retro.md / daily-report.md / decision-record.md
 docs/
   workflow.md / setup-from-scratch.md / skills-and-tools.md
@@ -63,7 +64,7 @@ retros/ / rounds/ / skills/ / sketchmind-template/ / decisions/
 ## 实例信息与开源注意
 
 - 看板示例：https://123sssdd.github.io/Sketchmind/ （数据只来自仓库根目录 `manifest.json`）。
-- 公开树指令已脱敏：`bots/bot-instructions-v3.md`、`templates/` 使用 `<AGENT_ID_*>`、`<NOTION_HUB_URL>`、`<NOTION_TODOS_DB_URL>`；真实 id 仅留本机 `bots/_instance/`（gitignore，不推送）。
+- 公开树指令已脱敏：`bots/bot-instructions-v3.md`、`templates/bot-instructions-v3.md`、`templates/instructions-v3/` 使用 `<AGENT_ID_*>`、`<NOTION_HUB_URL>`、`<NOTION_TODOS_DB_URL>`；真实 id 仅留本机 `bots/_instance/`（gitignore，不推送）。使用者粘贴请优先 `templates/instructions-v3/`（纯净版）；带编号的档案版仅供对照。
 - 仓库中不含任何密钥、token、cookie；配置只写环境变量名。
 - 延后项（用户 2026-10-28 19:28）：Tavily 暂不申请；B站字幕暂不处理；RSSHub 本实例保持监听所有网卡（不改 localhost-only）。运行时服务本轮未改。
 

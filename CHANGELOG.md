@@ -4,6 +4,15 @@
 每条指令修订写明：日期、版本、改了什么、来源决策文件、影响角色。改指令一律 B 类，须用户确认后生效。
 CHANGELOG 由 Memory 唯一写入（v3 第 13 条）。下方「指令 v3」与「P1 开源重构」条目经 Memory 于 2026-10-28 19:34 复核收口（执行工占位已并入）。
 
+## 仓库 2026-10-28 — 新增 v3 纯净粘贴版（templates/instructions-v3）
+来源：用户 t169u 要求再写一份纯净版并上传 GitHub；授权本轮推送。执行工草稿，**请 Memory 复核收口**（Memory 为 CHANGELOG 唯一写入者）。
+### Added
+- `templates/instructions-v3/`：现行 v3 纯净粘贴版（连贯完整指令，无【v3-n】增量编号）：`00-common.md`、`01`–`08` 角色文件、`90-search-plan.md`、目录 README（用法与占位符）。
+### Changed
+- 根 `README.md`：目录与快速开始指向 `templates/instructions-v3/`；说明与档案版（`bots/bot-instructions-v3.md` / `templates/bot-instructions-v3.md`）的区别。
+### Note
+- 不改动生效条款源 `/workspace/learning-loop/bot-instructions.md` 实质内容；本目录为派生文档。公开树已脱敏扫描。
+
 ## 指令 v3 补丁 — 2026-10-28 19:36（补漏，非新决策）
 来源：补回 v3 生效稿漏写的补充条款 v2.2；实例文件 /workspace/learning-loop/bot-instructions.md；公开树 `templates/bot-instructions-v3.md`、`bots/bot-instructions-v3.md`。影响：全部 bot。
 ### Fixed
