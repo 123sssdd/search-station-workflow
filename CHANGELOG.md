@@ -16,6 +16,7 @@ CHANGELOG 由 Memory 唯一写入（v3 第 13 条）。「指令 v3」「P1 开�
 - 下文旧条目中的 `bots/…`、`templates/bots/…`、`templates/bot-instructions-v3*.md` 路径为当时路径，现以上述新位置为准。
 ### Security
 - 原档案版中残留的 Notion 学习中枢 / Todos 库真实页面 ID 已换为 `<NOTION_HUB_URL>` / `<NOTION_TODOS_DB_URL>`。
+- 随后用户 t178u 决定：`instance-xieyongzhen/` 恢复真实 Notion 链接（换账号 Notion 不变），新增 `notion-ids.md` 列全部六个资源；agent UUID 仍只留本机 `_instance/`；`templates/` 保持占位符。
 
 ## 仓库 2026-10-28 — 新增 v3 纯净粘贴版（templates/instructions-v3）
 来源：用户要求再写一份纯净版并上传 GitHub（本轮授权推送）。经 Memory 于 2026-10-28 19:45 复核收口。

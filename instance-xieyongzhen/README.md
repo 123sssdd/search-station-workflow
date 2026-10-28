@@ -3,8 +3,14 @@
 这里是**本情报站自己用**的指令档案，保留【v3-n】条款编号与生效时间。想复刻这套配置的人请用 `templates/instructions-v3/`（纯净版，语义一致、无编号）。
 
 ## 生效源与同步
-- 真正生效的是本机 `/workspace/learning-loop/bot-instructions.md`；本目录是它的脱敏副本（agent id、Notion 链接为占位符）。
-- 真实 ID、可直接粘贴的版本在 `_instance/`（gitignored，只在本机）。
+- 真正生效的是本机 `/workspace/learning-loop/bot-instructions.md`；本目录是它的副本。
+- **Notion ID 有意公开**（用户 2026-10-28 决定）：换 Grok 账号后 Notion 不变。全部资源见 [`notion-ids.md`](notion-ids.md)。
+- **Agent UUID 只放本机**：本目录写成 `<AGENT_ID_*>` 占位符，换账号后会变。真实值在 `_instance/`（gitignored）。
+
+## 换 Grok 账号后
+1. 在新账号重建 8 个 bot，在每个 bot 的设置/详情里拿到新的 agent id（或在任一 bot 里列出自己的 bots 查看）。
+2. 更新 `_instance/01-…08-*.md` 里的通讯录和 owner id（把旧 UUID 全部替换成新值），或者从本目录文件开始，把 `<AGENT_ID_*>` 填上新值。
+3. 把拼好的指令粘贴给各 bot；Notion 链接不用改。新账号要重新连接 Notion 连接器，并授权访问「学习中枢」。
 
 ## 文件
 | 文件 | 说明 |
@@ -13,8 +19,9 @@
 | `00-common.md` | 公共条款 + v2.2 完成即通知用户（每个 bot 都附） |
 | `01-brainstorm-01.md` … `08-todos.md` | 各 bot：角色正文（v1 铁律）+ v3 角色增量 |
 | `90-search-plan.md` | v2.1 搜索执行方案（01/02/Searcher/质量评估附） |
+| `notion-ids.md` | Notion 资源清单（名称、用途、URL、data source）单一参考 |
 | `sites-to-login.md` | 需要登录的站点清单（无密钥） |
-| `_instance/` | 真实 ID 版，不入库 |
+| `_instance/` | 含真实 agent UUID 的版本，不入库 |
 
 粘贴顺序：角色文件 → `00-common.md` →（01/02/Searcher/质量评估）`90-search-plan.md`。本机可直接用 `_instance/<角色>.md`，已拼好。
 
