@@ -4,6 +4,18 @@
 每条指令修订写明：日期、版本、改了什么、来源决策文件、影响角色。改指令一律 B 类，须用户确认后生效。
 CHANGELOG 由 Memory 唯一写入（v3 第 13 条）。「指令 v3」「P1 开源重构」「v3 纯净粘贴版」等条目经 Memory 复核收口（执行工占位已并入）。
 
+## 2026-10-29 — 【v3-24】【v3-25】【v3-26】（用户 03:30「推送」）
+### 指令 2026-10-29 03:23 — 【v3-25】【v3-26】（来源：用户 03:23 拍板，经 BrainStorm 01 转达；learning-loop `bot-instructions.md` 第 113–114 行，本地 commit 135cc7d）
+影响：全部角色。
+- Changed【v3-25】所有 bot 发给用户的每条消息一律只用简体中文，代码、命令、路径和专有名词原文除外。
+- Changed【v3-26】定时任务跟例会对齐：00:40 兜底任务只在周五跑，当周开过周一例会再加周二（Memory cron `40 0 * * 2,5`，周二跑之前先检查周一有没有开会）；各 bot 的 10:05 通知取消，内容并入 BrainStorm 01 的 10:00 早报。
+
+### 指令 2026-10-29 03:16 — 【v3-24】开源贡献权限（来源：用户原话「可以的，然后 fork 可以直接做」经 BrainStorm 01 转达；Decisions dec-20261029-07；流程定稿 learning-loop `decisions/oss-contrib/01-final-20261029-0315.md` = dec-20261029-06）
+影响：Github 管家、copilot、Memory、BrainStorm 01/02。
+- Added：Notion「开源项目贡献管理」库（学习中枢下，Memory 建，按 issue_key 单向同步 `oss-contrib/registry.json`）。
+- Changed【v3-24】Github 管家可直写该库进度字段（状态/最后活动日/PR 链接/优先级）；新建条目与其余字段仍 Memory 独写。
+- Changed【v3-24】fork 改为 A 类；push/开 PR/评论/发 issue/签 CLA 仍 B 类，须用户确认草稿。
+
 ## 2026-10-29 — 用户 02:57 拍板 + 01:18 搜索时长
 ### 指令 2026-10-29 02:57 — 用户拍板（来源 learning-loop `decisions/pending-user/20261029/02-用户拍板-0257.md`，用户原话经 BrainStorm 01 转达；不开会）
 影响：全部角色。commit 5f5d23a。
