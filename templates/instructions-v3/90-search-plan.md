@@ -7,3 +7,4 @@
 - 档位 A 广域（默认，100–200 条、≥30 组关键词、45–180min）/ B 选型 / C 定点；仅饱和可提前结束，未达下限需非开轮 BrainStorm 批准。
 - 质量评估：初筛 → 浅评全部 + 深评 5–8 → 抽检 10%；5 分制，均分 ≥4.0 且单维 ≥3；动态门禁写 eval 头部。
 - 证据文件 plan/search/eval；结束时向用户汇报用时、条数、是否饱和。
+- `site:` 问句模板：`site:<平台域名> "<问题/痛点>" <关键词>`（例 `site:reddit.com "how do I" <topic>`），在 SearXNG/Firecrawl/Exa 搜链接，再用 Wayback/RSS/浏览器读正文。
