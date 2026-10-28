@@ -2,7 +2,7 @@
 
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)。指令版本与仓库版本分开记录；时间为 UTC+8。
 每条指令修订写明：日期、版本、改了什么、来源决策文件、影响角色。改指令一律 B 类，须用户确认后生效。
-CHANGELOG 约定由 Memory 唯一写入（v3 第 13 条）；本条由 BrainStorm 01 执行工代写占位，**请 Memory 复核并收口**。
+CHANGELOG 由 Memory 唯一写入（v3 第 13 条）。下方「指令 v3」与「P1 开源重构」条目经 Memory 于 2026-10-28 19:34 复核收口（执行工占位已并入）。
 
 ## 指令 v3 — 2026-10-28 19:30（用户确认生效）
 来源：docs/decisions/optimizations-20261028/01-final-1826.md；docs/decisions/user-decisions-20261028/01-final-1928.md（t162u）；用户确认生效并推送（t162u/t162s649）。全文：`templates/bot-instructions-v3.md`、`bots/bot-instructions-v3.md`（公开树为占位符版）。
@@ -15,6 +15,7 @@ CHANGELOG 约定由 Memory 唯一写入（v3 第 13 条）；本条由 BrainStor
 - 公共条款：结论先落盘；只停自己的子任务；状态以真实调用为准；意见落盘模板 + INDEX；评审注明范围；Memory 归档一律 priority:true；日报 9 项与 profiles/。
 - 01/02：开轮催办/代开轮；健康检查入 plan；summary / roadmap。
 - Searcher / 质量评估 / Memory / Todos：credits 参考上限、模板、hash 冻结、url 核验、写后重读、状态映射（待补）等【v3-n】条款。
+- 【v2.2】完成即通知用户：每项交付中文通知（做什么 + 路径/链接 + 是否需处理）；夜间 00:00–10:00 攒发（安全问题除外）。
 影响：全部角色。
 
 ## 仓库 2026-10-28 — P1 开源重构（schemas → 集中配置 → adapters）+ 公开 + Noncommercial
