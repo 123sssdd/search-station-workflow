@@ -1,0 +1,46 @@
+# 搜索后端与降级链（按顺序降级，每次降级写进 plan-<id>.md）
+chain: [firecrawl, searxng, websearch, curl_cffi_markitdown, jina_reader, crawl4ai]
+
+backends:
+  firecrawl:
+    kind: search+scrape
+    precheck: "firecrawl --status"     # 每轮开搜前；结果写 plan
+    env: [FIRECRAWL_API_KEY]
+    limits: "并发上限 2（本实例实测）"
+    credits_ref_limit: { A: 待补, B: 待补, C: 待补 }   # 参考上限，不阻断；由 Searcher 按 2 轮实测给出
+    notes: "免 key 请求可能因出口 IP 被判为代理而被拒"
+  searxng:
+    kind: search
+    url_env: SEARXNG_URL               # 默认 http://127.0.0.1:8888，仅本机
+    api: "/search?q=<q>&format=json&language=zh-CN"
+    mcp: "npx -y mcp-searxng"
+    known_issues: ["brave Too many requests 挂起 180s", "duckduckgo 偶发 CAPTCHA", "中文引擎默认未启用"]
+  websearch:
+    kind: search
+    notes: "平台内置搜索"
+  curl_cffi_markitdown:
+    kind: read_page
+    notes: "读单页第一跳，最快零成本"
+  jina_reader:
+    kind: read_page
+    url: "https://r.jina.ai/<url>"
+    notes: "免 key；s.jina.ai 搜索需 key（未申请）"
+  crawl4ai:
+    kind: read_page
+    notes: "本地 Chromium 渲染 JS 页面，降级链末端"
+  rsshub:
+    kind: feed
+    url_env: RSSHUB_URL                # 默认 http://127.0.0.1:1200
+    scope: "只用于公开榜单/热榜"
+  yt_dlp:
+    kind: video_meta
+    enabled: false                     # B站 412，暂停；不用 cookie
+
+platforms:                             # 按平台可选；结论须追溯原始链接/仓库
+  xiaohongshu: { discovery_only: false, verify_with_origin: true }   # 找 skill 优先渠道；只读低频，风控即停
+  skillhub:    { discovery_only: false, verify_with_origin: true }
+  clawhub:     { discovery_only: false, verify_with_origin: true }   # 任意路径返回 200，验链看内容/API
+
+blocked_from_box:                      # 本实例出口 IP 实测
+  zhihu: 403
+  bilibili: 412

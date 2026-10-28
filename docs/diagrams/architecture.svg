@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1500" viewBox="0 0 2400 1500"><rect width="100%" height="100%" fill="#FFFEF8"/><text x="1200" y="78" font-family="Noto Sans CJK SC" font-size="52" font-weight="800" text-anchor="middle" fill="#142A49">学习闭环 · 总架构（bot 角色与数据流）</text>
+<text x="1200" y="124" font-family="Noto Sans CJK SC" font-size="26" font-weight="400" text-anchor="middle" fill="#142A49">搜索 → 评估 → 沉淀 → Sketchmind manifest → Notion / GitHub</text>
+<rect x="40" y="160" width="2320" height="300" rx="26" fill="#EAF6FF"/>
+<path d="M66.7 158.1 Q1200.2 159.2 2332.1 160.0 Q2344.2 172.6 2358.1 184.2 Q2359.5 312.0 2358.3 432.8 Q2347.8 449.7 2334.3 459.5 Q1202.9 457.3 67.6 459.1 Q50.9 444.7 39.2 435.4 Q38.1 310.5 40.6 185.4 Q53.3 170.4 64.1 158.7" fill="none" stroke="#142A49" stroke-width="3.4" stroke-linecap="round" opacity="1"/>
+<path d="M66.8 159.7 Q1198.9 160.5 2333.8 159.1 Q2348.8 174.2 2358.9 186.3 Q2360.2 312.3 2361.0 433.1 Q2349.9 444.7 2333.6 461.1 Q1197.9 459.9 64.0 460.7 Q54.6 447.4 41.7 433.2 Q41.2 310.6 40.4 185.8 Q55.0 175.7 65.9 160.7" fill="none" stroke="#142A49" stroke-width="1.7" stroke-linecap="round" opacity="0.55"/>
+<path d="M64 188.0 L200 180 L204 220 L61 222.0Z" fill="#FFE27A" opacity=".7"/>
+<text x="72" y="212" font-family="Noto Sans CJK SC" font-size="30" font-weight="700" text-anchor="start" fill="#142A49">【角色】</text>
+<rect x="80" y="250" width="340" height="170" rx="18" fill="#FFFFFF"/>
+<path d="M100.2 251.4 Q248.7 249.3 402.7 247.9 Q410.8 257.0 418.3 266.1 Q421.6 332.8 418.9 401.5 Q413.2 408.5 401.8 420.2 Q252.3 421.9 99.6 419.0 Q88.5 410.2 81.7 404.0 Q77.9 333.1 78.8 266.8 Q88.9 259.5 97.0 247.8" fill="none" stroke="#142A49" stroke-width="3" stroke-linecap="round" opacity="1"/>
+<path d="M97.6 249.4 Q250.4 252.7 402.8 250.1 Q411.7 260.1 418.0 269.8 Q421.7 337.2 421.3 401.5 Q410.4 408.6 402.6 418.1 Q247.4 418.3 96.5 419.3 Q86.3 408.0 78.5 400.2 Q79.2 332.2 81.6 268.5 Q86.9 257.5 97.3 249.4" fill="none" stroke="#142A49" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+<text x="250" y="320" font-family="Noto Sans CJK SC" font-size="28" font-weight="700" text-anchor="middle" fill="#142A49">BrainStorm 01</text>
+<text x="250" y="370" font-family="Noto Sans CJK SC" font-size="24" font-weight="400" text-anchor="middle" fill="#142A49">牵头决策</text>
+<rect x="458" y="250" width="340" height="170" rx="18" fill="#FFFFFF"/>
+<path d="M475.9 248.2 Q625.6 249.1 779.0 251.4 Q787.0 256.1 800.0 268.1 Q795.9 335.3 795.9 402.1 Q791.9 413.2 780.9 418.9 Q627.2 418.0 477.2 420.1 Q468.7 410.0 456.8 403.4 Q460.9 337.1 459.3 269.4 Q468.4 257.4 476.1 249.4" fill="none" stroke="#142A49" stroke-width="3" stroke-linecap="round" opacity="1"/>
+<path d="M473.9 247.9 Q626.7 248.6 780.8 252.0 Q788.7 261.6 800.1 270.0 Q797.2 333.3 796.8 400.7 Q787.2 411.7 781.8 421.5 Q627.9 420.9 477.3 418.2 Q468.0 413.5 459.2 403.1 Q457.9 333.1 459.3 267.3 Q468.8 261.8 475.5 249.6" fill="none" stroke="#142A49" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+<text x="628" y="320" font-family="Noto Sans CJK SC" font-size="28" font-weight="700" text-anchor="middle" fill="#142A49">Brainstorm 02</text>
+<text x="628" y="370" font-family="Noto Sans CJK SC" font-size="24" font-weight="400" text-anchor="middle" fill="#142A49">复核</text>
+<rect x="836" y="250" width="340" height="170" rx="18" fill="#FFFFFF"/>
+<path d="M851.9 250.4 Q1005.8 250.9 1158.5 250.4 Q1166.8 261.6 1174.5 268.2 Q1173.1 336.8 1177.0 400.3 Q1168.5 408.8 1160.1 418.7 Q1008.2 417.2 852.7 420.0 Q846.6 410.0 836.2 403.5 Q833.4 336.4 837.7 268.7 Q846.9 259.1 855.4 251.7" fill="none" stroke="#142A49" stroke-width="3" stroke-linecap="round" opacity="1"/>
+<path d="M852.4 248.5 Q1006.1 252.2 1159.2 250.5 Q1168.7 256.9 1174.4 268.5 Q1173.7 332.4 1176.8 402.1 Q1166.9 412.7 1159.7 418.1 Q1004.1 417.3 852.2 419.8 Q842.2 413.4 834.1 401.2 Q838.8 335.6 834.7 267.0 Q845.0 260.8 854.0 248.9" fill="none" stroke="#142A49" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+<text x="1006" y="320" font-family="Noto Sans CJK SC" font-size="28" font-weight="700" text-anchor="middle" fill="#142A49">优化规划师</text>
+<text x="1006" y="370" font-family="Noto Sans CJK SC" font-size="24" font-weight="400" text-anchor="middle" fill="#142A49">方案</text>
+<rect x="1214" y="250" width="340" height="170" rx="18" fill="#FFFFFF"/>
+<path d="M1233.9 251.7 Q1382.2 249.7 1535.6 249.5 Q1543.9 260.0 1553.7 266.7 Q1552.8 332.7 1555.2 403.9 Q1545.9 410.2 1534.9 418.4 Q1383.8 421.5 1230.2 421.7 Q1221.0 412.0 1212.8 402.9 Q1217.0 334.4 1213.7 267.4 Q1220.6 258.2 1231.3 249.8" fill="none" stroke="#142A49" stroke-width="3" stroke-linecap="round" opacity="1"/>
+<path d="M1232.9 249.5 Q1384.1 248.8 1538.0 248.3 Q1547.5 257.4 1555.7 266.2 Q1552.6 337.4 1552.6 403.1 Q1546.9 413.1 1536.8 422.0 Q1383.4 420.2 1232.1 420.0 Q1222.0 409.7 1215.3 400.6 Q1216.4 333.6 1211.9 266.2 Q1221.6 259.6 1230.8 249.0" fill="none" stroke="#142A49" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+<text x="1384" y="320" font-family="Noto Sans CJK SC" font-size="28" font-weight="700" text-anchor="middle" fill="#142A49">Memory</text>
+<text x="1384" y="370" font-family="Noto Sans CJK SC" font-size="24" font-weight="400" text-anchor="middle" fill="#142A49">归档</text>
+<rect x="1592" y="250" width="340" height="170" rx="18" fill="#FFFFFF"/>
+<path d="M1611.9 249.0 Q1759.8 250.2 1912.8 248.3 Q1921.0 256.3 1930.7 267.2 Q1930.8 336.6 1931.1 402.0 Q1921.1 410.1 1911.9 418.9 Q1759.1 421.4 1610.2 418.6 Q1600.8 413.6 1590.3 403.4 Q1591.6 335.0 1593.5 267.5 Q1601.0 260.1 1612.1 249.3" fill="none" stroke="#142A49" stroke-width="3" stroke-linecap="round" opacity="1"/>
+<path d="M1611.5 250.9 Q1762.8 249.4 1913.3 248.0 Q1920.8 256.4 1933.1 266.9 Q1930.0 332.5 1933.5 403.6 Q1924.0 409.7 1912.9 419.1 Q1761.8 417.9 1609.8 419.0 Q1603.8 413.8 1592.2 400.9 Q1594.8 333.9 1591.4 265.8 Q1600.3 258.8 1610.0 248.7" fill="none" stroke="#142A49" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+<text x="1762" y="320" font-family="Noto Sans CJK SC" font-size="28" font-weight="700" text-anchor="middle" fill="#142A49">Todos</text>
+<text x="1762" y="370" font-family="Noto Sans CJK SC" font-size="24" font-weight="400" text-anchor="middle" fill="#142A49">待办</text>
+<rect x="1970" y="250" width="340" height="170" rx="18" fill="#FFFFFF"/>
+<path d="M1986.2 249.6 Q2137.3 247.1 2291.1 248.8 Q2301.5 259.2 2311.1 268.7 Q2311.3 337.3 2309.5 401.2 Q2303.9 408.9 2293.0 420.6 Q2137.3 422.0 1989.7 420.6 Q1980.4 412.9 1968.4 402.1 Q1970.0 337.0 1971.3 269.4 Q1979.5 261.4 1988.8 250.9" fill="none" stroke="#142A49" stroke-width="3" stroke-linecap="round" opacity="1"/>
+<path d="M1986.8 247.9 Q2137.8 249.2 2290.3 251.5 Q2301.4 259.8 2310.6 268.8 Q2309.9 332.0 2311.3 403.1 Q2301.0 411.2 2292.7 418.1 Q2141.4 418.5 1986.1 419.0 Q1980.4 409.2 1971.1 404.1 Q1970.0 334.3 1969.9 268.8 Q1980.6 259.7 1988.6 248.1" fill="none" stroke="#142A49" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+<text x="2140" y="320" font-family="Noto Sans CJK SC" font-size="28" font-weight="700" text-anchor="middle" fill="#142A49">手绘风技术配图</text>
+<text x="2140" y="370" font-family="Noto Sans CJK SC" font-size="24" font-weight="400" text-anchor="middle" fill="#142A49">画图</text>
+<rect x="40" y="500" width="2320" height="560" rx="26" fill="#EEF8E8"/>
+<path d="M65.1 500.3 Q1197.1 497.4 2333.0 500.8 Q2348.2 514.1 2359.1 526.1 Q2359.8 779.8 2358.3 1035.7 Q2345.2 1049.9 2335.9 1057.9 Q1199.8 1061.9 68.1 1059.8 Q51.6 1045.3 42.0 1032.7 Q40.5 777.9 40.1 528.0 Q50.8 514.9 66.0 501.7" fill="none" stroke="#142A49" stroke-width="3.4" stroke-linecap="round" opacity="1"/>
+<path d="M66.9 498.8 Q1202.4 499.9 2331.9 497.8 Q2347.0 512.7 2359.1 524.4 Q2359.1 778.9 2361.5 1031.8 Q2348.5 1049.0 2332.3 1061.9 Q1201.3 1062.4 65.1 1059.4 Q52.4 1050.0 40.4 1033.4 Q39.6 778.7 38.0 524.2 Q55.0 511.7 67.9 498.9" fill="none" stroke="#142A49" stroke-width="1.7" stroke-linecap="round" opacity="0.55"/>
+<path d="M64 528.0 L230 520 L234 560 L61 562.0Z" fill="#FFE27A" opacity=".7"/>
+<text x="72" y="552" font-family="Noto Sans CJK SC" font-size="30" font-weight="700" text-anchor="start" fill="#142A49">【数据流】</text>
+<rect x="80" y="600" width="500" height="400" rx="18" fill="#FFFFFF"/>
+<path d="M97.4 602.0 Q332.3 601.9 562.6 601.8 Q573.6 609.3 581.0 616.0 Q581.4 799.7 581.1 982.6 Q569.7 988.3 563.9 998.4 Q329.8 999.1 97.1 1001.1 Q91.9 989.6 80.7 981.1 Q80.3 799.4 78.5 616.5 Q87.2 611.4 98.0 598.8" fill="none" stroke="#142A49" stroke-width="3" stroke-linecap="round" opacity="1"/>
+<path d="M99.8 602.2 Q329.7 597.8 560.6 598.2 Q570.1 606.5 578.9 616.9 Q580.4 802.3 581.1 981.6 Q570.5 991.1 561.5 999.3 Q327.4 998.7 100.1 998.4 Q89.0 991.8 81.6 980.8 Q78.6 798.5 79.6 617.8 Q91.7 611.1 99.6 597.9" fill="none" stroke="#142A49" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+<text x="330" y="655" font-family="Noto Sans CJK SC" font-size="28" font-weight="700" text-anchor="middle" fill="#142A49">① 搜索 · Searcher</text>
+<text x="120" y="715.0" font-family="Noto Sans CJK SC" font-size="23" font-weight="400" text-anchor="start" fill="#142A49">降级顺序：</text>
+<text x="120" y="748.35" font-family="Noto Sans CJK SC" font-size="23" font-weight="400" text-anchor="start" fill="#142A49">Firecrawl 优先</text>
+<text x="120" y="781.7" font-family="Noto Sans CJK SC" font-size="23" font-weight="400" text-anchor="start" fill="#142A49">→ SearXNG</text>
+<text x="120" y="815.05" font-family="Noto Sans CJK SC" font-size="23" font-weight="400" text-anchor="start" fill="#142A49">→ RSSHub</text>
+<text x="120" y="848.4" font-family="Noto Sans CJK SC" font-size="23" font-weight="400" text-anchor="start" fill="#142A49">小红书 / SkillHub：搜 skill</text>
+<rect x="640" y="600" width="500" height="400" rx="18" fill="#FFFFFF"/>
+<path d="M659.9 600.1 Q889.8 599.7 1123.2 598.8 Q1128.9 611.8 1138.3 619.4 Q1141.2 802.1 1141.7 980.2 Q1132.7 988.0 1120.4 1000.3 Q887.2 1001.3 660.0 1000.6 Q649.2 990.6 641.2 980.2 Q638.8 802.7 638.6 616.9 Q650.7 606.0 658.2 602.2" fill="none" stroke="#142A49" stroke-width="3" stroke-linecap="round" opacity="1"/>
+<path d="M657.0 599.2 Q892.0 598.5 1122.1 600.2 Q1128.2 608.5 1140.7 616.0 Q1138.2 802.3 1140.6 980.2 Q1129.4 990.5 1121.4 1000.0 Q891.2 1001.3 657.4 999.5 Q646.0 989.8 641.5 980.1 Q640.0 798.2 641.2 616.7 Q648.8 607.6 659.7 598.3" fill="none" stroke="#142A49" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+<text x="890" y="655" font-family="Noto Sans CJK SC" font-size="28" font-weight="700" text-anchor="middle" fill="#142A49">② 评估 · 质量评估</text>
+<text x="890" y="730.0" font-family="Noto Sans CJK SC" font-size="24" font-weight="400" text-anchor="middle" fill="#142A49">5 分制打分</text>
+<path d="M770 783.0 L1010 775 L1014 815 L767 817.0Z" fill="#FFE27A" opacity=".7"/>
+<text x="890" y="805" font-family="Noto Sans CJK SC" font-size="24" font-weight="700" text-anchor="middle" fill="#142A49">均分 ≥ 4.0 通过</text>
+<rect x="1200" y="600" width="500" height="400" rx="18" fill="#FFFFFF"/>
+<path d="M1216.0 600.4 Q1452.5 597.3 1679.9 600.4 Q1690.5 610.3 1698.6 617.8 Q1701.3 798.9 1698.3 980.1 Q1689.0 989.1 1682.7 1000.1 Q1449.8 998.9 1219.0 1001.5 Q1211.9 990.7 1198.3 980.1 Q1197.5 799.5 1201.7 618.3 Q1210.6 608.3 1219.2 599.2" fill="none" stroke="#142A49" stroke-width="3" stroke-linecap="round" opacity="1"/>
+<path d="M1219.3 598.2 Q1451.2 598.2 1682.2 599.8 Q1689.9 610.4 1699.9 618.6 Q1698.5 800.8 1699.6 981.5 Q1690.8 992.8 1680.1 998.7 Q1447.4 1000.6 1217.4 999.3 Q1211.7 988.3 1201.1 982.8 Q1202.5 798.8 1201.0 618.4 Q1210.8 611.7 1216.1 601.4" fill="none" stroke="#142A49" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+<text x="1450" y="655" font-family="Noto Sans CJK SC" font-size="28" font-weight="700" text-anchor="middle" fill="#142A49">③ 沉淀</text>
+<text x="1450" y="730.0" font-family="Noto Sans CJK SC" font-size="24" font-weight="400" text-anchor="middle" fill="#142A49">rounds/ 证据文件</text>
+<text x="1450" y="764.8" font-family="Noto Sans CJK SC" font-size="24" font-weight="400" text-anchor="middle" fill="#142A49">+ lock</text>
+<rect x="1760" y="600" width="500" height="400" rx="18" fill="#FFFFFF"/>
+<path d="M1779.8 601.4 Q2007.8 600.0 2239.8 601.9 Q2249.8 610.2 2258.5 616.8 Q2262.2 799.8 2261.2 982.4 Q2251.1 990.4 2240.5 999.6 Q2010.9 999.9 1778.2 998.5 Q1768.6 988.6 1758.1 982.5 Q1758.3 799.5 1762.1 620.1 Q1767.0 606.8 1777.8 601.7" fill="none" stroke="#142A49" stroke-width="3" stroke-linecap="round" opacity="1"/>
+<path d="M1776.8 600.2 Q2011.6 601.6 2243.2 599.1 Q2249.7 607.6 2258.9 616.9 Q2259.6 798.1 2258.8 981.0 Q2253.4 989.1 2240.1 998.9 Q2008.5 1000.2 1778.7 998.2 Q1768.8 988.2 1757.8 983.7 Q1758.4 799.7 1759.4 619.7 Q1767.4 606.3 1778.4 601.4" fill="none" stroke="#142A49" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+<text x="2010" y="655" font-family="Noto Sans CJK SC" font-size="28" font-weight="700" text-anchor="middle" fill="#142A49">④ Sketchmind manifest</text>
+<text x="2010" y="730.0" font-family="Noto Sans CJK SC" font-size="24" font-weight="400" text-anchor="middle" fill="#142A49">看板数据文件</text>
+<text x="2010" y="764.8" font-family="Noto Sans CJK SC" font-size="24" font-weight="400" text-anchor="middle" fill="#142A49">manifest.json</text>
+<path d="M580.5 801.2 Q609.0 797.0 636.6 800.9" fill="none" stroke="#142A49" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M636 800 L618.0 808.7" stroke="#142A49" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M636 800 L618.0 791.3" stroke="#142A49" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M1138.0 799.3 Q1165.3 803.0 1194.0 801.0" fill="none" stroke="#142A49" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M1196 800 L1178.0 808.7" stroke="#142A49" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M1196 800 L1178.0 791.3" stroke="#142A49" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M1701.4 801.4 Q1727.5 799.2 1756.5 798.1" fill="none" stroke="#142A49" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M1756 800 L1738.0 808.7" stroke="#142A49" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M1756 800 L1738.0 791.3" stroke="#142A49" stroke-width="3.2" stroke-linecap="round"/>
+<rect x="40" y="1100" width="2320" height="360" rx="26" fill="#FFF8D8"/>
+<path d="M66.0 1099.9 Q1199.4 1101.8 2334.7 1098.5 Q2347.2 1113.9 2359.6 1125.0 Q2362.9 1281.0 2359.6 1432.0 Q2348.5 1449.3 2333.6 1457.9 Q1201.6 1461.8 66.6 1459.5 Q52.4 1449.7 39.7 1432.5 Q37.7 1277.5 40.3 1125.4 Q54.6 1110.8 64.0 1098.4" fill="none" stroke="#142A49" stroke-width="3.4" stroke-linecap="round" opacity="1"/>
+<path d="M67.3 1099.5 Q1200.4 1102.6 2335.0 1098.6 Q2346.1 1111.0 2358.6 1124.1 Q2359.3 1281.5 2361.3 1435.3 Q2345.8 1449.0 2332.0 1461.8 Q1198.9 1460.6 66.6 1458.2 Q54.3 1448.1 41.7 1434.6 Q42.1 1280.7 40.5 1124.7 Q52.8 1113.4 64.0 1101.9" fill="none" stroke="#142A49" stroke-width="1.7" stroke-linecap="round" opacity="0.55"/>
+<path d="M64 1128.0 L200 1120 L204 1160 L61 1162.0Z" fill="#FFE27A" opacity=".7"/>
+<text x="72" y="1152" font-family="Noto Sans CJK SC" font-size="30" font-weight="700" text-anchor="start" fill="#142A49">【落地】</text>
+<rect x="500" y="1190" width="620" height="220" rx="18" fill="#FFFFFF"/>
+<path d="M520.1 1191.4 Q808.2 1192.3 1103.5 1190.8 Q1112.0 1197.9 1119.5 1207.8 Q1122.1 1301.7 1120.7 1391.2 Q1109.5 1400.3 1101.4 1410.0 Q808.1 1407.0 520.1 1409.8 Q508.7 1401.7 501.4 1393.5 Q501.9 1299.4 498.1 1207.4 Q508.2 1200.8 518.0 1190.7" fill="none" stroke="#142A49" stroke-width="3" stroke-linecap="round" opacity="1"/>
+<path d="M516.0 1188.4 Q812.5 1188.9 1103.0 1188.2 Q1112.5 1201.4 1120.7 1209.3 Q1117.2 1297.4 1120.5 1392.8 Q1108.7 1398.8 1103.7 1409.1 Q811.9 1411.8 518.8 1411.0 Q507.3 1403.0 500.5 1390.9 Q498.9 1300.7 501.8 1207.8 Q507.5 1201.8 517.9 1190.4" fill="none" stroke="#142A49" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+<text x="810" y="1260" font-family="Noto Sans CJK SC" font-size="28" font-weight="700" text-anchor="middle" fill="#142A49">Notion · 学习中枢</text>
+<text x="810" y="1310" font-family="Noto Sans CJK SC" font-size="24" font-weight="400" text-anchor="middle" fill="#142A49">五库</text>
+<rect x="1300" y="1190" width="620" height="220" rx="18" fill="#FFFFFF"/>
+<path d="M1316.7 1189.6 Q1610.8 1188.7 1901.2 1189.5 Q1912.8 1197.6 1921.2 1206.0 Q1922.1 1302.8 1919.8 1392.1 Q1912.1 1403.4 1900.9 1410.2 Q1612.1 1411.4 1317.4 1409.5 Q1308.2 1398.9 1299.3 1390.2 Q1298.4 1300.7 1302.0 1207.1 Q1309.1 1197.9 1320.1 1191.6" fill="none" stroke="#142A49" stroke-width="3" stroke-linecap="round" opacity="1"/>
+<path d="M1319.9 1191.7 Q1611.4 1191.5 1900.8 1189.1 Q1911.8 1198.5 1919.4 1206.0 Q1919.9 1300.7 1918.0 1390.0 Q1911.4 1399.8 1902.1 1410.2 Q1609.5 1408.8 1316.4 1409.4 Q1311.0 1399.0 1297.9 1393.3 Q1301.2 1299.7 1298.1 1206.4 Q1310.0 1197.6 1319.4 1192.1" fill="none" stroke="#142A49" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+<text x="1610" y="1260" font-family="Noto Sans CJK SC" font-size="28" font-weight="700" text-anchor="middle" fill="#142A49">GitHub 仓库</text>
+<text x="1610" y="1310" font-family="Noto Sans CJK SC" font-size="24" font-weight="400" text-anchor="middle" fill="#142A49">search-station-workflow</text>
+<path d="M2010.4 1000.3 Q2010.6 1075.1 2010.0 1148.5 Q1407.0 1147.4 807.9 1148.6 Q808.0 1170.5 808.3 1186.5" fill="none" stroke="#142A49" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M810 1186 L801.3 1168.0" stroke="#142A49" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M810 1186 L818.7 1168.0" stroke="#142A49" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M2008.7 1149.6 Q1810.1 1150.9 1610.6 1149.6 Q1610.7 1168.1 1608.1 1186.6" fill="none" stroke="#142A49" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M1610 1186 L1601.3 1168.0" stroke="#142A49" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M1610 1186 L1618.7 1168.0" stroke="#142A49" stroke-width="3.2" stroke-linecap="round"/>
+<text x="2050" y="1140" font-family="Noto Sans CJK SC" font-size="22" font-weight="400" text-anchor="start" fill="#142A49">同步</text></svg>

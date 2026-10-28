@@ -1,0 +1,10 @@
+# SearXNG settings 示例（本实例：源码 master + venv，python -m searx.webapp）
+# secret_key 不得入库：部署时自行生成随机值替换下方占位符
+use_default_settings: true
+server:
+  secret_key: "<CHANGE_ME_RANDOM_HEX>"   # 对应环境变量名 SEARXNG_SECRET
+  bind_address: "127.0.0.1"              # 只绑定本机
+  port: 8888
+  limiter: false                         # 本实例关闭（日志提示缺 limiter.toml）
+search:
+  formats: [html, json]                  # 必须含 json 供 bot / mcp-searxng 调用

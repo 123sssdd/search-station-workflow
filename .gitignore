@@ -1,0 +1,16 @@
+# 密钥与本地环境
+.env
+.env.*
+!config/.env.example
+.venv*/
+node_modules/
+node22/
+.corepack/
+# 部署源码树与运行产物
+searxng/
+rsshub/
+searx-etc/settings.yml
+*.log
+*.db
+todo.db
+__pycache__/
