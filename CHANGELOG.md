@@ -4,6 +4,11 @@
 每条指令修订写明：日期、版本、改了什么、来源决策文件、影响角色。改指令一律 B 类，须用户确认后生效。
 CHANGELOG 由 Memory 唯一写入（v3 第 13 条）。下方「指令 v3」与「P1 开源重构」条目经 Memory 于 2026-10-28 19:34 复核收口（执行工占位已并入）。
 
+## 指令 v3 补丁 — 2026-10-28 19:36（补漏，非新决策）
+来源：补回 v3 生效稿漏写的补充条款 v2.2；实例文件 /workspace/learning-loop/bot-instructions.md；公开树 `templates/bot-instructions-v3.md`、`bots/bot-instructions-v3.md`。影响：全部 bot。
+### Fixed
+- 补回【v2.2】完成即通知用户：每完成一项任务/交付须在本 bot 与用户的聊天中用中文通知（做什么 + 路径/链接 + 是否需用户处理；不需要则写「无需回复」）；夜间 00:00–10:00 攒到 10:00 后一次发（安全问题除外）；通知用户与回复派活 bot 都要做，不能互相替代。
+
 ## 指令 v3 — 2026-10-28 19:30（用户确认生效）
 来源：docs/decisions/optimizations-20261028/01-final-1826.md；docs/decisions/user-decisions-20261028/01-final-1928.md（t162u）；用户确认生效并推送（t162u/t162s649）。全文：`templates/bot-instructions-v3.md`、`bots/bot-instructions-v3.md`（公开树为占位符版）。
 ### Changed
