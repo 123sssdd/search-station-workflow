@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/123sssdd/search-station-workflow/schemas/daily-report.schema.json",
+  "title": "meetings/<YYYYMMDD>/<bot>.md 9-item daily report",
+  "type": "object",
+  "required": [
+    "bot",
+    "meeting_day",
+    "coverage_date"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "bot": {
+      "type": "string"
+    },
+    "meeting_day": {
+      "type": "string",
+      "pattern": "^[0-9]{8}$"
+    },
+    "coverage_date": {
+      "type": "string"
+    },
+    "nothing_today": {
+      "type": "boolean"
+    },
+    "current_duty": {
+      "type": "string"
+    },
+    "profile_changes": {
+      "type": "string"
+    },
+    "done": {
+      "type": "string"
+    },
+    "unfinished": {
+      "type": "string"
+    },
+    "new_tools": {
+      "type": "string"
+    },
+    "lessons": {
+      "type": "string"
+    },
+    "solved_problems": {
+      "type": "string"
+    },
+    "near_term_plan": {
+      "type": "string"
+    },
+    "optimization_suggestions": {
+      "type": "array",
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "needs_instruction_change": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "needs_help_from": {
+      "type": "string"
+    }
+  }
+}

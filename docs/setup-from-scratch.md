@@ -120,7 +120,7 @@ cd <WORKSPACE>/rsshub && pnpm install && nohup pnpm start > ../rsshub-run.log 2>
 curl http://127.0.0.1:1200/zhihu/hot
 ```
 
-注意：本实例 RSSHub 实际监听 *:1200（所有网卡），建议改为只监听本机（具体配置项：待补）。只用于公开榜单/热榜；UP 主/用户动态路由在 box 出口 IP 下被风控，不配 cookie。
+注意：本实例 RSSHub 实际监听 *:1200（所有网卡）。用户 2026-10-28 19:28 拍板**维持全网卡监听**，不改为 localhost-only。只用于公开榜单/热榜；UP 主/用户动态路由在 box 出口 IP 下被风控，不配 cookie。新实例若只需本机访问，可自行改绑定地址。
 
 ## 第 8 步：搜索与抓取工具
 

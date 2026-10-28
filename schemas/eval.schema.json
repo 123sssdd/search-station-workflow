@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/123sssdd/search-station-workflow/schemas/eval.schema.json",
+  "title": "rounds/eval-<id>.md structured fields",
+  "type": "object",
+  "required": [
+    "round_id",
+    "score_scale",
+    "gate",
+    "picked"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "round_id": {
+      "type": "string"
+    },
+    "search_file_present": {
+      "type": "boolean"
+    },
+    "score_scale": {
+      "type": "integer",
+      "const": 5
+    },
+    "pass_avg_min": {
+      "type": "number",
+      "default": 4.0
+    },
+    "pass_dim_min": {
+      "type": "number",
+      "default": 3
+    },
+    "tier": {
+      "type": "string",
+      "enum": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    "gate": {
+      "type": "object",
+      "properties": {
+        "quantity_or_saturation": {
+          "type": "boolean"
+        },
+        "urls_verified": {
+          "type": "boolean"
+        },
+        "reputation_attached": {
+          "type": "boolean"
+        },
+        "evidence_files_complete": {
+          "type": "boolean"
+        },
+        "within_time_budget": {
+          "type": "boolean"
+        }
+      }
+    },
+    "firecrawl_credits_recorded": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "screening": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "shallow": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "deep": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "spot_check": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "picked": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "rank",
+          "id",
+          "avg_score"
+        ],
+        "properties": {
+          "rank": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "string"
+          },
+          "avg_score": {
+            "type": "number"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "pending_user_decisions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

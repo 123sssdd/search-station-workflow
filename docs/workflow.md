@@ -71,7 +71,7 @@
 - **首选 Firecrawl**（用户拍板，不考虑积分花费）：每轮先 `firecrawl --status` 确认登录与额度并写入 plan；key 经环境变量 `FIRECRAWL_API_KEY` 加载。
 - 降级顺序：SearXNG（127.0.0.1:8888）/ WebSearch → curl_cffi + MarkItDown → Jina Reader（r.jina.ai，免 key 部分）→ Crawl4AI（本地 Chromium 渲染 JS）。每次降级写进 plan。
 - RSSHub（127.0.0.1:1200）只用于公开榜单/热榜（B站排行、知乎热榜等匿名可用）。
-- 已知被拦（box 出口 IP）：知乎 403、B站 412；yt-dlp 抓 B站暂停，不用 cookie；B站字幕方案待用户决定。
+- 已知被拦（box 出口 IP）：知乎 403、B站 412；yt-dlp 抓 B站暂停，不用 cookie；B站字幕暂不处理（用户 2026-10-28 19:28 延后）。Tavily 暂不申请（同拍板）。
 - 原则：只读公开页面，遵守 robots/ToS，限速；不绕过验证码或登录墙。
 - 验链：每条链接实际请求；404=失效，403/超时标「未能确认」；clawhub 对任意路径返回 200，需看页面内容/API 而非状态码。
 

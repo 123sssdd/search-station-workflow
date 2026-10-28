@@ -3,7 +3,7 @@
 > 一套由 8 个协作 bot 组成的「情报站」工作流：围绕用户发来的主题做**搜索 → 评估 → 沉淀 → 看板/知识库**，每天 00:00 例会复盘并在夜间自主推进，白天由用户拍板关键决策。
 > 本仓库是可复用的工作流套件（文档、角色模板、配置示例、决策记录、架构图），目标是让别人 clone 后改一份配置、贴几份角色指令就能搭起自己的情报站。
 
-状态：2026-10-28 整理。当前生效指令版本为 **v2 + v2.1**；v3 为草案（`templates/bot-instructions-v3-draft.md`），**未生效，待用户确认**。
+状态：2026-10-28。当前生效指令版本为 **v3**（`bots/bot-instructions-v3.md` / `templates/bot-instructions-v3.md`，2026-10-28 19:30 Asia/Shanghai 用户确认生效）。历史草案：`templates/bot-instructions-v3-draft.md`（备查）。
 
 ## 架构总览
 
@@ -21,7 +21,7 @@
 
 1. 读 [`docs/setup-from-scratch.md`](docs/setup-from-scratch.md)，按步骤在新账号建 8 个 bot。
 2. 把 `templates/bots/<role>.md` 的指令粘到对应 bot（再把占位符换成你的实际值）。
-3. 复制 `config/config.example.yaml`、`config/.env.example`，只在本地填真实值（`.env` 不进仓库）。
+3. 复制 `config/station.yaml.example` → `config/station.yaml`，并复制 `config/.env.example`，只在本地填真实值（`.env` 不进仓库）。（旧名 `config.example.yaml` 仅为兼容指针。）
 4. 连接 Notion 并建五库（schema 见 setup 文档）；部署 SearXNG 与 RSSHub；登录 Firecrawl CLI。
 5. 每个 bot 建好 00:00 例会 / 00:40 兜底定时任务。
 6. 用 `templates/evidence/` 的模板跑第一轮搜索。
@@ -29,44 +29,47 @@
 ## 目录
 
 ```
-README.md                    本文件
-CHANGELOG.md                 版本记录（v1 → v2 → v2.1 → v3 草案）
-搭建总说明.md                  早期（v1）Sketchmind 学习循环搭建说明，保留
-docs/
-  workflow.md                角色分工、轮值、证据文件与锁、例会、搜索栈、Notion、看板
-  setup-from-scratch.md      从零搭建步骤
-  skills-and-tools.md        skills / MCP 连接器 / 本地服务 / CLI 清单（只写环境变量名）
-  self-evolution.md          自进化机制（例会 → 复盘 → 提案 → 落实/待批）
-  extensibility.md           可扩展性（角色、搜索后端、存储、配置、版本）
-  design-tradeoffs.md        关键取舍及原因
-  decisions/                 决策记录（脱敏副本，索引见 decisions/README.md）
-  diagrams/                  架构图 png/svg/excalidraw 与生成脚本
-  search-stack-2026-10-28.md 搜索栈评估（早期提交，保留）
-  learning-workflow.*        v1 学习工作流图（保留）
-templates/
-  bots/<role>.md             8 个角色的通用指令模板 + _new-role-template.md
-  bot-instructions-v3-draft.md   v3 指令草案（未生效）
-  evidence/                  plan / search / eval 证据文件模板
-  retro.md / daily-report.md / decision-record.md
+README.md / CHANGELOG.md / LICENSE / NOTICE
+搭建总说明.md                 早期（v1）说明，保留
+schemas/                      JSON Schema：manifest / plan / search / eval / retro / daily-report / decision-record
+adapters/
+  search/                     搜索后端 stub（firecrawl、searxng、…）
+  storage/                    镜像 stub（notion、local-md、obsidian、none）
+  tasks/                      任务库 stub（notion、local-sqlite；不走 manifest）
+  platform/                   平台 stub（grok-bot）
 config/
-  config.example.yaml        集中配置示例（只写环境变量名）
-  .env.example               环境变量名清单
-  searxng-settings.example.yml
-  backends.yaml              搜索后端与降级链
-retros/2026-10-28.md         首日复盘（含各 bot 追加）；retros/inputs/2026-10-28/ 为各 bot 原始输入（脱敏）
-bots/                        本实例的 v1 指令与 v2.1 现行指令（含实例专属 id，开源前需替换，见下）
-decisions/2026-10-28.md      早期规则决定（保留）
-rounds/                      每轮证据文件与锁的约定
-skills/                      可直接拷贝的 skills
-sketchmind-template/         Sketchmind 看板（GitHub Pages）模板
+  station.yaml.example        集中配置真源（推荐）
+  config.example.yaml         兼容指针 → station.yaml.example
+  .env.example / backends.yaml / searxng-settings.example.yml
+templates/
+  bots/<role>.md              8 角色通用指令模板
+  bot-instructions-v3.md      现行 v3 全文（占位符）
+  bot-instructions-v3-draft.md  v3 草案（已生效，备查）
+  evidence/ / retro.md / daily-report.md / decision-record.md
+docs/
+  workflow.md / setup-from-scratch.md / skills-and-tools.md
+  self-evolution.md / extensibility.md / design-tradeoffs.md
+  decisions/                  决策记录（含 user-decisions-20261028/01-final-1928.md）
+  diagrams/
+bots/
+  bot-instructions-v3.md      现行 v3（脱敏）
+  bot-instructions-v2.1.md    历史
+  _instance/                  实例专属（仅 README 入库；真 UUID 本机保留、gitignore）
+  sites-to-login.md
+scripts/validate-schemas.py
+retros/ / rounds/ / skills/ / sketchmind-template/ / decisions/
 ```
 
 ## 实例信息与开源注意
 
 - 看板示例：https://123sssdd.github.io/Sketchmind/ （数据只来自仓库根目录 `manifest.json`）。
-- `bots/` 下为本实例实际使用的指令，含 bot 内部 id 与私有路径；对外开源前应只保留 `templates/bots/`，或把 id 换成占位符（待用户决定）。
+- 公开树指令已脱敏：`bots/bot-instructions-v3.md`、`templates/` 使用 `<AGENT_ID_*>`、`<NOTION_HUB_URL>`、`<NOTION_TODOS_DB_URL>`；真实 id 仅留本机 `bots/_instance/`（gitignore，不推送）。
 - 仓库中不含任何密钥、token、cookie；配置只写环境变量名。
+- 延后项（用户 2026-10-28 19:28）：Tavily 暂不申请；B站字幕暂不处理；RSSHub 本实例保持监听所有网卡（不改 localhost-only）。运行时服务本轮未改。
+
 
 ## 许可
 
-待补（由用户决定开源许可证）。
+[PolyForm Noncommercial License 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0)（见 `LICENSE` / `NOTICE`）。
+
+允许开源使用、研究与非商业分发；**不允许商业使用**。详见许可证全文。

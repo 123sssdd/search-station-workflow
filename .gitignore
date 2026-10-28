@@ -14,3 +14,9 @@ searx-etc/settings.yml
 *.db
 todo.db
 __pycache__/
+
+# 实例专属指令（含真实 agent UUID / Notion URL）；目录内仅 README 可入库
+bots/_instance/*
+!bots/_instance/README.md
+
+.planning/

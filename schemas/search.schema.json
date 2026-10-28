@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/123sssdd/search-station-workflow/schemas/search.schema.json",
+  "title": "rounds/search-<id>.md structured fields",
+  "type": "object",
+  "required": [
+    "round_id",
+    "items"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "round_id": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "topic": {
+      "type": "string"
+    },
+    "backends_used": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "firecrawl_credits": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "raw_count": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "dedup_count": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "keyword_execution_rate": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "single_source_max_ratio": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "blocked_and_alternates": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "url",
+          "url_verify_status"
+        ],
+        "additionalProperties": true,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https?://"
+          },
+          "url_verify_status": {
+            "type": "string",
+            "description": "200 / 404失效 / 403·超时未能确认"
+          },
+          "type": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "skill_repo_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reputation_sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "round": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -2,22 +2,40 @@
 
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)。指令版本与仓库版本分开记录；时间为 UTC+8。
 每条指令修订写明：日期、版本、改了什么、来源决策文件、影响角色。改指令一律 B 类，须用户确认后生效。
+CHANGELOG 约定由 Memory 唯一写入（v3 第 13 条）；本条由 BrainStorm 01 执行工代写占位，**请 Memory 复核并收口**。
 
-## [Unreleased] — 指令 v3 草案（待用户确认，未生效）
-来源：docs/decisions/optimizations-20261028/01-final-1826.md（取代 1820）；评审：Brainstorm 02（docs/decisions/optimizations-20261028/02-1823.md、docs/decisions/bot-instructions-v3/02-1823.md，全面评审，无反对条目）；全文 templates/bot-instructions-v3-draft.md。
-### Added
-- 公共条款：结论先落盘再发消息；只停自己的子任务；状态类判断以真实调用为准；意见落盘模板 + 各主题 INDEX.md；评审请求注明「只看阻塞/全面评审」；发给 Memory 的归档请求一律 priority:true（「仅通知用 false」的例外）；日报 9 项与 profiles/ 写进指令。（影响：全部）
-- 01/02：开轮 15 分钟无 plan 由非开轮方催办，催办 2 次仍无则「代开轮」；健康检查写进 plan（小红书仅本轮用到时检查、每天 ≤2 次）；summary / roadmap 流程。
-- Searcher：Firecrawl credits A/B/C 参考上限（数值待补，不阻断）；search 模板；交接后不改文件。
-- 质量评估：eval 模板；缺 search 文件拒评并写一行 eval；旧 10 分制 ÷2 换算并注明。
-- Memory：交接文件 hash 冻结；url 格式 + 可达性校验；Notion select 预检、schema 先记 Decisions、写后重读；CHANGELOG 唯一写入者。
-- Todos：状态映射表与待同步补写流程（待补）；写后重读。
+## 指令 v3 — 2026-10-28 19:30（用户确认生效）
+来源：docs/decisions/optimizations-20261028/01-final-1826.md；docs/decisions/user-decisions-20261028/01-final-1928.md（t162u）；用户确认生效并推送（t162u/t162s649）。全文：`templates/bot-instructions-v3.md`、`bots/bot-instructions-v3.md`（公开树为占位符版）。
 ### Changed
-- 汇报分工由「评审：X；执行：Z」改为三栏「评审 / 执行 / 待定」，旧写法全部替换。
+- 指令自 v2+v2.1 升为 **v3 生效**（原 Unreleased 草案条目并入生效）。
+- 【v3-3】终审默认由「只看阻塞」改为「全面评审」（仍可在请求中注明「只看阻塞」）。
+- 【v3-14b】Todos Notion「状态」改为原生 status 类型。
+- 待决延后：Tavily 暂不申请；B站字幕暂不处理；RSSHub 保持全网卡监听。
+### Added（相对 v2.1，摘要）
+- 公共条款：结论先落盘；只停自己的子任务；状态以真实调用为准；意见落盘模板 + INDEX；评审注明范围；Memory 归档一律 priority:true；日报 9 项与 profiles/。
+- 01/02：开轮催办/代开轮；健康检查入 plan；summary / roadmap。
+- Searcher / 质量评估 / Memory / Todos：credits 参考上限、模板、hash 冻结、url 核验、写后重读、状态映射（待补）等【v3-n】条款。
+影响：全部角色。
+
+## 仓库 2026-10-28 — P1 开源重构（schemas → 集中配置 → adapters）+ 公开 + Noncommercial
+来源决策：docs/decisions/user-decisions-20261028/01-final-1928.md；docs/decisions/open-source-extensibility/优化规划师-1808.md + 02-1823.md。授权推送：t162u。
+### Added
+- `schemas/`：manifest / plan / search / eval / retro / daily-report / decision-record（JSON Schema；manifest.url 要求可核验 http(s)）。
+- `scripts/validate-schemas.py`：校验入口（可选依赖 jsonschema）。
+- `config/station.yaml.example`：集中配置真源；`config.example.yaml` 改为兼容指针。
+- `adapters/` 骨架：search（含 firecrawl…yt_dlp）、storage、tasks、platform/grok-bot（仅约定 md）。
+- `LICENSE`：PolyForm Noncommercial License 1.0.0；`NOTICE`。
+- `docs/decisions/user-decisions-20261028/01-final-1928.md`：用户拍板脱敏摘要。
+### Changed
+- README：现行指令改为 v3；目录树；许可节；快速开始指向 station.yaml.example。
+- `docs/extensibility.md`：标明 schemas / station / adapters 已落地。
+- `bots/`：实例 UUID 文件移出公开路径（本机 `_instance/` + gitignore）；公开树仅脱敏 v3/v2.1。
+### Security
+- 推送前脱敏扫描：公开树无真实 agent UUID / Notion 页面 URL / 密钥值。
 
 ## 仓库 2026-10-28 — 开源化工作流套件
 ### Added
-- README 重写（架构图、快速开始、目录）；docs/workflow.md、setup-from-scratch.md、skills-and-tools.md、self-evolution.md、extensibility.md（草案，已并入 02 评审，目录重构待用户决定）、design-tradeoffs.md。
+- README 重写（架构图、快速开始、目录）；docs/workflow.md、setup-from-scratch.md、skills-and-tools.md、self-evolution.md、extensibility.md（P1 目录已按用户拍板落地，见上方仓库条目）、design-tradeoffs.md。
 - docs/diagrams/：architecture、daily-meeting（PNG/SVG/.excalidraw + 生成脚本，手绘风技术配图出品）。
 - docs/decisions/：bot-instructions-v2、daily-meeting、search-plan、notion-schema、optimizations-20261028、open-source-extensibility 决策记录（脱敏副本）。
 - templates/：8 个角色模板 + 公共条款 + 新角色模板；plan/search/eval 证据模板；retro、daily-report、decision-record 模板；v3 指令草案。

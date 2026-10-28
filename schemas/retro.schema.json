@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/123sssdd/search-station-workflow/schemas/retro.schema.json",
+  "title": "retros/<YYYY-MM-DD>.md structured fields",
+  "type": "object",
+  "required": [
+    "date",
+    "summarizer"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "summarizer": {
+      "type": "string"
+    },
+    "progress": {
+      "type": "string"
+    },
+    "problems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "problem",
+          "cause",
+          "resolution"
+        ],
+        "properties": {
+          "problem": {
+            "type": "string"
+          },
+          "cause": {
+            "type": "string"
+          },
+          "resolution": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "lessons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tools": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "names + env var names only"
+    },
+    "optimizations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "appendices": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

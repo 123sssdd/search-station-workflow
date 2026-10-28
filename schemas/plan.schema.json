@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/123sssdd/search-station-workflow/schemas/plan.schema.json",
+  "title": "rounds/plan-<id>.md structured fields",
+  "type": "object",
+  "required": [
+    "round_id",
+    "owner",
+    "reviewer",
+    "domain",
+    "tier"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "round_id": {
+      "type": "string",
+      "pattern": "^[0-9]{8}-[0-9]{4}-(01|02)$"
+    },
+    "owner": {
+      "type": "string",
+      "enum": [
+        "01",
+        "02"
+      ]
+    },
+    "reviewer": {
+      "type": "string",
+      "enum": [
+        "01",
+        "02"
+      ]
+    },
+    "domain": {
+      "type": "string"
+    },
+    "firecrawl_status": {
+      "type": "string",
+      "description": "status summary only; never include API key"
+    },
+    "xiaohongshu_login_ok": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "standards_source": {
+      "type": "string"
+    },
+    "standards_cache_date": {
+      "type": "string"
+    },
+    "dimensions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "weight"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "number"
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 0
+          },
+          "strength": {
+            "type": "string",
+            "enum": [
+              "strong",
+              "weak",
+              "强",
+              "弱"
+            ]
+          }
+        }
+      }
+    },
+    "tier": {
+      "type": "string",
+      "enum": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    "date_range": {
+      "type": "string"
+    },
+    "target_count": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "platforms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "keyword_groups": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "user_custom": {
+      "type": "string"
+    },
+    "degrade_log": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "string"
+          },
+          "progress": {
+            "type": "string"
+          },
+          "backend": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "saturation": {
+      "type": "object",
+      "properties": {
+        "new_ratio_last_5_groups": {
+          "type": "number"
+        },
+        "approver": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

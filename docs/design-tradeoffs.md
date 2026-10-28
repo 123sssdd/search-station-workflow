@@ -11,6 +11,8 @@
 | 5 | 小红书只读低频、风控即停 | 第三方自动化工具 ToS 风险高（可能封号）；用户本人登录后人工节奏阅读最合规 | search-stack-expansion 第二节；v2 Searcher 段 |
 | 6 | Memory 是 manifest 与 Notion 四库的唯一写入者 | 单一写入者原则：保证看板与镜像一致；脱敏只在 Memory 一处统一做；推送前核对交接文件 | v1 指令；notion-design；02 v2 评审第 7 条；Memory 复盘 |
 | 7 | Todos 库只由 Todos 写，Notion 为主、本地为备 | 写入方唯一；本地不反写避免冲突；Notion 写失败先记本地「待同步」 | v2 Todos 段；02 v2 评审第 4 条 |
+| 8a | RSSHub 保持监听所有网卡 | 用户 2026-10-28 19:28 拍板维持现状，本轮不改运行时 | user-decisions-20261028/01-final-1928.md |
+| 8b | Tavily 暂不申请；B站字幕暂不处理 | 同拍板延后；Playwright 为例会自主 | user-decisions-20261028/01-final-1928.md |
 | 8 | 看板用静态 manifest.json + GitHub Pages，不用数据库 / `/api/hub` | 搭建说明硬规则：看板只读根目录 manifest.json，不用自建数据库写路径（除非另做带 token 的 HTTP 接口） | 搭建总说明.md 第五节；手绘配图复盘（按拍板重画「无数据库 / 无 /api/hub」） |
 | 9 | Notion 是单向只读镜像，不反写 manifest | 以 manifest 为真源；按 manifest_id + content_hash upsert、删除只标 archived，保证可重放 | notion-design-2026-10-28.md；02 15:24 复核 |
 | 10 | 改 bot 指令属 B 类，须用户确认 | 用户要求；夜间用户不在，关键决策只准备材料标「待用户决定」；推送批准必须来自用户本人原话 | v2 公共条款；Memory 复盘「推送批准必须来自用户本人原话」 |

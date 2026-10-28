@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/123sssdd/search-station-workflow/schemas/decision-record.schema.json",
+  "title": "decisions/<topic>/*.md structured fields",
+  "type": "object",
+  "required": [
+    "topic",
+    "title",
+    "author",
+    "type",
+    "conclusion"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "topic": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "timezone": {
+      "type": "string",
+      "default": "Asia/Shanghai"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "提案",
+        "评审",
+        "拍板",
+        "proposal",
+        "review",
+        "decision"
+      ]
+    },
+    "target": {
+      "type": "string"
+    },
+    "review": {
+      "type": "string"
+    },
+    "execute": {
+      "type": "string"
+    },
+    "basis": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "conclusion": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "problem": {
+            "type": "string"
+          },
+          "change": {
+            "type": "string"
+          },
+          "impact": {
+            "type": "string"
+          },
+          "instruction_change": {
+            "type": "boolean"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "采纳",
+              "未采纳",
+              "延后",
+              "accepted",
+              "rejected",
+              "deferred"
+            ]
+          }
+        }
+      }
+    },
+    "pending_user_decisions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

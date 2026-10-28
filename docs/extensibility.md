@@ -1,22 +1,33 @@
 # 可扩展性设计
 
-> 状态：基于优化规划师方案 docs/decisions/open-source-extensibility/优化规划师-1808.md（2026-10-28 18:08）与 Brainstorm 02 全面评审 02-1823.md（同意方向，4 处必改已并入，标【02】）。**仍为草案**：P1–P3 的仓库结构调整属 B 类，等用户确认后再动。
+> 状态：基于优化规划师方案 docs/decisions/open-source-extensibility/优化规划师-1808.md（2026-10-28 18:08）与 Brainstorm 02 全面评审 02-1823.md。用户 2026-10-28 19:28 拍板按「先 schemas，再集中配置，最后适配器」执行并公开仓库。
+> **已落地（P1）**：`schemas/`、`config/station.yaml.example`、`adapters/` 骨架、PolyForm Noncommercial、脱敏公开树。
+> **未做（后续）**：roles/ 目录迁移、protocols/ 拆分、local-md 实现代码、校验脚本与健康检查合并等。指令现行为 **v3**（已生效）。
 > 目标：别人 clone 仓库后，改一份配置和几份角色文件就能跑起自己的「情报站」，不绑定特定 bot 平台、Notion 或某个搜索服务。
+
+
+## 已落地（P1，2026-10-28）
+
+- `schemas/*.schema.json` + `scripts/validate-schemas.py`
+- `config/station.yaml.example`（真源）+ 保留 `backends.yaml` / `.env.example` / `searxng-settings.example.yml`
+- `adapters/{search,storage,tasks,platform}/` stub（含 credits_ref_limit 占位与环境变量名）
+- 许可：PolyForm Noncommercial 1.0.0
+- 指令：**v3 已生效**（公开树占位符版）
 
 ## 1. 目录约定（目标结构）与当前对应
 
 | 目标（方案） | 用途 | 当前仓库对应 |
 |---|---|---|
-| station.yaml | 集中配置 | config/config.example.yaml（示例，字段同方向） |
+| station.yaml | 集中配置 | **已落地** `config/station.yaml.example`（`config.example.yaml` 为兼容指针） |
 | roles/<role>.md | 角色模板（纯文本指令） | templates/bots/<role>.md |
 | protocols/ | 公共条款：round、lock、证据文件、A/B 分类、例会 | docs/workflow.md 第 2–6 节 |
-| adapters/search/*.md | 搜索后端说明 + 调用约定 | config/backends.yaml + docs/skills-and-tools.md |
-| adapters/storage/*.md | 存储后端映射 | 本文第 4 节 |
-| adapters/platform/<平台>.md | 平台差异 | 待补 |
-| schemas/ | manifest、plan、search、eval、retro 字段定义（JSON Schema） | 待补（现有 Markdown 模板在 templates/） |
+| adapters/search/*.md | 搜索后端说明 + 调用约定 | **已落地** `adapters/search/*.md` stub；链仍由 `config/backends.yaml` 真源 |
+| adapters/storage/*.md | 存储后端映射 | **已落地** `adapters/storage/*.md`；说明见本文第 4 节 |
+| adapters/platform/<平台>.md | 平台差异 | **已落地 stub** `adapters/platform/grok-bot.md` |
+| schemas/ | manifest、plan、search、eval、retro 等 JSON Schema | **已落地** `schemas/*.schema.json`（Markdown 模板仍在 templates/） |
 | CHANGELOG.md | 版本记录 | CHANGELOG.md |
 
-【02】迁移关系：目标结构落地时由现有目录迁移，不并存两套——templates/bots/ → roles/；config/config.example.yaml → station.yaml（示例）；config/backends.yaml → adapters/search/；docs/workflow.md 第 2–6 节 → protocols/；templates/evidence/ 的字段 → schemas/。迁移前保持现有结构。
+【02】迁移关系：不并存两套真源。**已迁**：config/config.example.yaml → `config/station.yaml.example`（旧文件改指针）；templates/evidence 字段 → `schemas/`；adapters/search|storage|tasks|platform stub 已建（`backends.yaml` 仍为搜索链真源，adapters 为说明层）。**未迁**：templates/bots/ → roles/；docs/workflow.md 第 2–6 节 → protocols/。
 
 ## 2. 新增或替换 bot 角色
 
@@ -71,6 +82,8 @@
 
 ## 8. 分步落地（方案建议）
 
-- 【02 调整顺序】P1：先出 schemas（manifest 的 url 字段要求可核验）；P2：station.yaml 与 roles/ 和校验脚本（校验依赖 schemas）；P3：local-md 存储适配器、tasks 适配器、平台适配文件。
-- 每一步推送仓库属 B 类，夜间不推，待用户决定。本次推送只新增文档、模板与配置示例，未做目录重构。
-- 【02】开源前做一次脱敏扫描（token、cookie、个人链接、Notion 页面 ID）属 A 类；对外公开属 B 类。
+- 【02 调整顺序】P1：先出 schemas（manifest 的 url 字段要求可核验）；P2：station.yaml 与 roles/ 和校验脚本；P3：local-md 实现、tasks 实现、平台适配完善。
+- **P1 已落地并推送**（用户 2026-10-28 19:28 放行）：schemas + station.yaml.example + adapters 骨架 + LICENSE + 脱敏 + 公开。
+- 余项：roles/ 迁移、protocols/、实现级适配器代码、开轮健康检查脚本。
+- 延后（同拍板，不改运行时）：Tavily 申请、B站字幕、RSSHub 改 localhost-only（维持全网卡）。
+- 【02】开源前脱敏扫描（token、cookie、个人链接、Notion 页面 ID）已做；仓库已按用户决定公开。
