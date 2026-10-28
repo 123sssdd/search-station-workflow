@@ -19,7 +19,7 @@
 | 目标（方案） | 用途 | 当前仓库对应 |
 |---|---|---|
 | station.yaml | 集中配置 | **已落地** `config/station.yaml.example`（`config.example.yaml` 为兼容指针） |
-| roles/<role>.md | 角色模板（纯文本指令） | templates/bots/<role>.md |
+| roles/<role>.md | 角色模板（纯文本指令） | templates/instructions-v3/<NN>-<role>.md（新角色：99-new-role-template.md） |
 | protocols/ | 公共条款：round、lock、证据文件、A/B 分类、例会 | docs/workflow.md 第 2–6 节 |
 | adapters/search/*.md | 搜索后端说明 + 调用约定 | **已落地** `adapters/search/*.md` stub；链仍由 `config/backends.yaml` 真源 |
 | adapters/storage/*.md | 存储后端映射 | **已落地** `adapters/storage/*.md`；说明见本文第 4 节 |
@@ -27,7 +27,7 @@
 | schemas/ | manifest、plan、search、eval、retro 等 JSON Schema | **已落地** `schemas/*.schema.json`（Markdown 模板仍在 templates/） |
 | CHANGELOG.md | 版本记录 | CHANGELOG.md |
 
-【02】迁移关系：不并存两套真源。**已迁**：config/config.example.yaml → `config/station.yaml.example`（旧文件改指针）；templates/evidence 字段 → `schemas/`；adapters/search|storage|tasks|platform stub 已建（`backends.yaml` 仍为搜索链真源，adapters 为说明层）。**未迁**：templates/bots/ → roles/；docs/workflow.md 第 2–6 节 → protocols/。
+【02】迁移关系：不并存两套真源。**已迁**：config/config.example.yaml → `config/station.yaml.example`（旧文件改指针）；templates/evidence 字段 → `schemas/`；adapters/search|storage|tasks|platform stub 已建（`backends.yaml` 仍为搜索链真源，adapters 为说明层）。**已迁**：templates/bots/ → `templates/instructions-v3/`（旧版归 `archive/v2.1/`）。**未迁**：docs/workflow.md 第 2–6 节 → protocols/。
 
 ## 2. 新增或替换 bot 角色
 
@@ -72,7 +72,7 @@
 ## 6. 平台无关的纯文本指令
 
 - 角色文件只写行为和文件约定，不写平台专属工具名；平台差异放 adapters/platform/<平台>.md（如 grok-bot、claude-code、cursor、自建 cron），说明消息、定时、优先级在各平台如何实现。
-- 「priority:true」抽象成「需对方处理的通知」，由平台适配文件映射到具体实现。templates/bots/ 中仍保留 priority:true 写法，并注明此映射。
+- 「priority:true」抽象成「需对方处理的通知」，由平台适配文件映射到具体实现。templates/instructions-v3/ 中仍保留 priority:true 写法，并注明此映射。
 
 ## 7. 版本与变更记录
 

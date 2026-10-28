@@ -10,14 +10,14 @@
 
 | # | 名称 | 指令模板 |
 |---|---|---|
-| 1 | BrainStorm 01 | templates/bots/brainstorm-01.md |
-| 2 | Brainstorm 02 | templates/bots/brainstorm-02.md |
-| 3 | Searcher | templates/bots/searcher.md |
-| 4 | 质量评估 | templates/bots/quality-eval.md |
-| 5 | Memory | templates/bots/memory.md |
-| 6 | 优化规划师 | templates/bots/optimizer.md |
-| 7 | 手绘风技术配图 | templates/bots/diagram.md |
-| 8 | Todos | templates/bots/todos.md |
+| 1 | BrainStorm 01 | templates/instructions-v3/01-brainstorm-01.md |
+| 2 | Brainstorm 02 | templates/instructions-v3/02-brainstorm-02.md |
+| 3 | Searcher | templates/instructions-v3/03-searcher.md |
+| 4 | 质量评估 | templates/instructions-v3/04-quality-eval.md |
+| 5 | Memory | templates/instructions-v3/05-memory.md |
+| 6 | 优化规划师 | templates/instructions-v3/06-optimizer.md |
+| 7 | 手绘风技术配图 | templates/instructions-v3/07-diagram.md |
+| 8 | Todos | templates/instructions-v3/08-todos.md |
 
 建完后把各 bot 的 agent id 填进 `config/config.example.yaml` 的 `roles.<role>.agent_id`（复制为你自己的 `config.yaml`，不必入库），再把模板里的 `<AGENT_ID_*>` 占位符换成实际 id。最小可运行集合：BrainStorm（至少 1 个）+ Searcher + 质量评估 + Memory；其余为可选（见 docs/extensibility.md）。
 

@@ -4,6 +4,19 @@
 每条指令修订写明：日期、版本、改了什么、来源决策文件、影响角色。改指令一律 B 类，须用户确认后生效。
 CHANGELOG 由 Memory 唯一写入（v3 第 13 条）。「指令 v3」「P1 开源重构」「v3 纯净粘贴版」等条目经 Memory 复核收口（执行工占位已并入）。
 
+## 仓库 2026-10-28 — 目录重构：instance-xieyongzhen/ 与 archive/
+来源：用户 t175u（自用版独立文件夹、加 xieyongzhen 后缀；清理 templates/bots 与 bots 两个目录）。指令语义未改。
+### Added
+- `instance-xieyongzhen/`：本站自用带【v3-n】指令，按 bot 拆分（00-common、01–08、90-search-plan）+ 单文件 `bot-instructions-v3-annotated.md` + README（编号与 decisions/CHANGELOG 的对应）。
+- `templates/instructions-v3/99-new-role-template.md`：新角色模板，v3 格式（含 v2.2 完成即通知用户）。
+### Changed / Moved
+- `bots/` 整体并入 `instance-xieyongzhen/`（`sites-to-login.md`；`_instance/` → `instance-xieyongzhen/_instance/`，仍 gitignore）；`bots/` 删除。
+- `templates/bots/` → `archive/v2.1/templates-bots/`；`bots/bot-instructions-v2.1.md` → `archive/v2.1/`；`templates/bot-instructions-v3-draft.md` → `archive/`。
+- `templates/bot-instructions-v3.md`、`bots/bot-instructions-v3.md` 由 `instance-xieyongzhen/bot-instructions-v3-annotated.md` 取代。
+- 下文旧条目中的 `bots/…`、`templates/bots/…`、`templates/bot-instructions-v3*.md` 路径为当时路径，现以上述新位置为准。
+### Security
+- 原档案版中残留的 Notion 学习中枢 / Todos 库真实页面 ID 已换为 `<NOTION_HUB_URL>` / `<NOTION_TODOS_DB_URL>`。
+
 ## 仓库 2026-10-28 — 新增 v3 纯净粘贴版（templates/instructions-v3）
 来源：用户要求再写一份纯净版并上传 GitHub（本轮授权推送）。经 Memory 于 2026-10-28 19:45 复核收口。
 ### Added

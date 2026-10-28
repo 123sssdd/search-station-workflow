@@ -79,4 +79,4 @@ Brainstorm 02 评审（终审默认只看阻塞）→ BrainStorm 01 拍板 decis
 
 - 复盘：retros/2026-10-28.md（P1–P8、O1–O7）。
 - 提案：优化规划师 9 条 + 复盘 O1–O7 + 各 bot 可优化点 → 02 全面评审（无反对，6 处修改 + 3 处缺漏）→ 01 拍板 r2（docs/decisions/optimizations-20261028/01-final-1826.md，B 类 17 条、A 类 9 条、观察 4 条）。
-- 结果：文档/模板/配置/架构图（A 类）当晚推送本仓库；指令改动汇成 v3 草案（templates/bot-instructions-v3-draft.md），待用户确认。
+- 结果：文档/模板/配置/架构图（A 类）当晚推送本仓库；指令改动汇成 v3 草案（archive/bot-instructions-v3-draft.md），待用户确认。

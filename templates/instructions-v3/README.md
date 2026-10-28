@@ -9,7 +9,7 @@
 | 版本 | 路径 | 受众 | 特点 |
 |------|------|------|------|
 | **纯净最终版（本目录）** | `templates/instructions-v3/` | 复刻者、对外文档 | 连贯全文，无增量编号 |
-| **档案版（带【v3-n】）** | `bots/bot-instructions-v3.md`、`templates/bot-instructions-v3.md`；本站生效源 `/workspace/learning-loop/bot-instructions.md` | 本站 bot 与维护者 | 保留条款编号与生效时间，便于追溯 |
+| **档案版（带【v3-n】）** | `instance-xieyongzhen/`（按 bot 拆分 + 单文件 `bot-instructions-v3-annotated.md`）；本站生效源 `/workspace/learning-loop/bot-instructions.md` | 本站 bot 与维护者 | 保留条款编号与生效时间，便于追溯 |
 
 两套语义一致。本站改指令：先改档案/生效源 → 你确认 → 再同步生成/更新本目录纯净版。
 
@@ -44,4 +44,5 @@ README.md
 07-diagram.md
 08-todos.md
 90-search-plan.md     搜索方案（仅 01/02/Searcher/质量评估）
+99-new-role-template.md  新增角色空白模板（v3 格式）
 ```

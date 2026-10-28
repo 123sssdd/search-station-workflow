@@ -3,7 +3,7 @@
 > 一套由 8 个协作 bot 组成的「情报站」工作流：围绕用户发来的主题做**搜索 → 评估 → 沉淀 → 看板/知识库**，每天 00:00 例会复盘并在夜间自主推进，白天由用户拍板关键决策。
 > 本仓库是可复用的工作流套件（文档、角色模板、配置示例、决策记录、架构图），目标是让别人 clone 后改一份配置、贴几份角色指令就能搭起自己的情报站。
 
-状态：2026-10-28。当前生效指令版本为 **v3**（`bots/bot-instructions-v3.md` / `templates/bot-instructions-v3.md`，2026-10-28 19:30 Asia/Shanghai 用户确认生效）。历史草案：`templates/bot-instructions-v3-draft.md`（备查）。
+状态：2026-10-28。当前生效指令版本为 **v3**（2026-10-28 19:30 Asia/Shanghai 用户确认生效）。复刻者用 `templates/instructions-v3/`；本站自用带【v3-n】版在 `instance-xieyongzhen/`。历史：`archive/`。
 
 ## 架构总览
 
@@ -20,7 +20,7 @@
 ## 快速开始
 
 1. 读 [`docs/setup-from-scratch.md`](docs/setup-from-scratch.md)，按步骤在新账号建 8 个 bot。
-2. **复刻本套系统：** 用 `templates/instructions-v3/`（纯净最终版）对应角色 + `00-common.md`（01/02/Searcher/质量评估再加 `90-search-plan.md`），替换占位符后粘贴。**本站自用 / 各 bot：** 用带 `【v3-n】` 的档案版（`bots/bot-instructions-v3.md` 或本机生效的 `bot-instructions.md`）。角色骨架也可用 `templates/bots/<role>.md`。
+2. **复刻本套系统：** 用 `templates/instructions-v3/`（纯净最终版）对应角色 + `00-common.md`（01/02/Searcher/质量评估再加 `90-search-plan.md`），替换占位符后粘贴。**本站自用 / 各 bot：** 用带 `【v3-n】` 的档案版（`instance-xieyongzhen/`，与本机生效的 `bot-instructions.md` 同步）。新增角色用 `templates/instructions-v3/99-new-role-template.md`。
 3. 复制 `config/station.yaml.example` → `config/station.yaml`，并复制 `config/.env.example`，只在本地填真实值（`.env` 不进仓库）。（旧名 `config.example.yaml` 仅为兼容指针。）
 4. 连接 Notion 并建五库（schema 见 setup 文档）；部署 SearXNG 与 RSSHub；登录 Firecrawl CLI。
 5. 每个 bot 建好 00:00 例会 / 00:40 兜底定时任务。
@@ -42,21 +42,17 @@ config/
   config.example.yaml         兼容指针 → station.yaml.example
   .env.example / backends.yaml / searxng-settings.example.yml
 templates/
-  bots/<role>.md              8 角色通用指令模板
-  bot-instructions-v3.md      现行 v3 档案/对照稿（带【v3-n】编号）
-  bot-instructions-v3-draft.md  v3 草案（已生效，备查）
-  instructions-v3/            复刻用纯净最终版（外人用；本站 bot 用带【v3-n】档案版）
+  instructions-v3/            复刻用纯净最终版（00-common、01–08 角色、90 搜索方案、99 新角色模板）
   evidence/ / retro.md / daily-report.md / decision-record.md
 docs/
   workflow.md / setup-from-scratch.md / skills-and-tools.md
   self-evolution.md / extensibility.md / design-tradeoffs.md
   decisions/                  决策记录（含 user-decisions-20261028/01-final-1928.md）
   diagrams/
-bots/
-  bot-instructions-v3.md      现行 v3（脱敏）
-  bot-instructions-v2.1.md    历史
-  _instance/                  实例专属（仅 README 入库；真 UUID 本机保留、gitignore）
+instance-xieyongzhen/         本站自用指令（带【v3-n】，按 bot 拆分 + 单文件总档；脱敏）
+  _instance/                  真实 ID 版（仅 README 入库；gitignore）
   sites-to-login.md
+archive/                      历史：v2.1 指令与角色模板、v3 草案
 scripts/validate-schemas.py
 retros/ / rounds/ / skills/ / sketchmind-template/ / decisions/
 ```
@@ -64,7 +60,7 @@ retros/ / rounds/ / skills/ / sketchmind-template/ / decisions/
 ## 实例信息与开源注意
 
 - 看板示例：https://123sssdd.github.io/Sketchmind/ （数据只来自仓库根目录 `manifest.json`）。
-- 公开树指令已脱敏：`bots/bot-instructions-v3.md`、`templates/bot-instructions-v3.md`、`templates/instructions-v3/` 使用 `<AGENT_ID_*>`、`<NOTION_HUB_URL>`、`<NOTION_TODOS_DB_URL>`；真实 id 仅留本机 `bots/_instance/`（gitignore，不推送）。**分工：** `instructions-v3/` = 复刻者用的纯净最终版；带 `【v3-n】` 的档案版 = 本站 bot/维护者追溯用。
+- 公开树指令已脱敏：`instance-xieyongzhen/`、`templates/instructions-v3/` 使用 `<AGENT_ID_*>`、`<NOTION_HUB_URL>`、`<NOTION_TODOS_DB_URL>`；真实 id 仅留本机 `instance-xieyongzhen/_instance/`（gitignore，不推送）。**分工：** `instructions-v3/` = 复刻者用的纯净最终版；带 `【v3-n】` 的档案版 = 本站 bot/维护者追溯用。
 - 仓库中不含任何密钥、token、cookie；配置只写环境变量名。
 - 延后项（用户 2026-10-28 19:28）：Tavily 暂不申请；B站字幕暂不处理；RSSHub 本实例保持监听所有网卡（不改 localhost-only）。运行时服务本轮未改。
 

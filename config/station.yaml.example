@@ -29,14 +29,14 @@ rotation:
   deputy_takeover_minutes: 30         # 01 无响应由 02 代主持/代拍板
 
 roles:                                # 启用/停用/改名；agent_id 填你平台上的 id
-  brainstorm-01: { enabled: true, template: templates/bots/brainstorm-01.md, agent_id: <AGENT_ID_01> }
-  brainstorm-02: { enabled: true, template: templates/bots/brainstorm-02.md, agent_id: <AGENT_ID_02> }
-  searcher:      { enabled: true, template: templates/bots/searcher.md,      agent_id: <AGENT_ID_SEARCHER> }
-  quality-eval:  { enabled: true, template: templates/bots/quality-eval.md,  agent_id: <AGENT_ID_EVAL> }
-  memory:        { enabled: true, template: templates/bots/memory.md,        agent_id: <AGENT_ID_MEMORY> }
-  optimizer:     { enabled: true, template: templates/bots/optimizer.md,     agent_id: <AGENT_ID_OPTIMIZER> }   # 可选
-  diagram:       { enabled: true, template: templates/bots/diagram.md,       agent_id: <AGENT_ID_DIAGRAM> }     # 可选
-  todos:         { enabled: true, template: templates/bots/todos.md,         agent_id: <AGENT_ID_TODOS> }       # 可选
+  brainstorm-01: { enabled: true, template: templates/instructions-v3/01-brainstorm-01.md, agent_id: <AGENT_ID_01> }
+  brainstorm-02: { enabled: true, template: templates/instructions-v3/02-brainstorm-02.md, agent_id: <AGENT_ID_02> }
+  searcher:      { enabled: true, template: templates/instructions-v3/03-searcher.md, agent_id: <AGENT_ID_SEARCHER> }
+  quality-eval:  { enabled: true, template: templates/instructions-v3/04-quality-eval.md, agent_id: <AGENT_ID_EVAL> }
+  memory:        { enabled: true, template: templates/instructions-v3/05-memory.md, agent_id: <AGENT_ID_MEMORY> }
+  optimizer:     { enabled: true, template: templates/instructions-v3/06-optimizer.md, agent_id: <AGENT_ID_OPTIMIZER> }   # 可选
+  diagram:       { enabled: true, template: templates/instructions-v3/07-diagram.md, agent_id: <AGENT_ID_DIAGRAM> }     # 可选
+  todos:         { enabled: true, template: templates/instructions-v3/08-todos.md, agent_id: <AGENT_ID_TODOS> }       # 可选
 
 evidence:
   files: [plan, search, eval]
