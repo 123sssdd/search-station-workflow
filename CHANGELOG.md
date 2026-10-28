@@ -2,10 +2,10 @@
 
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)。指令版本与仓库版本分开记录；时间为 UTC+8。
 每条指令修订写明：日期、版本、改了什么、来源决策文件、影响角色。改指令一律 B 类，须用户确认后生效。
-CHANGELOG 由 Memory 唯一写入（v3 第 13 条）。下方「指令 v3」与「P1 开源重构」条目经 Memory 于 2026-10-28 19:34 复核收口（执行工占位已并入）。
+CHANGELOG 由 Memory 唯一写入（v3 第 13 条）。「指令 v3」「P1 开源重构」「v3 纯净粘贴版」等条目经 Memory 复核收口（执行工占位已并入）。
 
 ## 仓库 2026-10-28 — 新增 v3 纯净粘贴版（templates/instructions-v3）
-来源：用户 t169u 要求再写一份纯净版并上传 GitHub；授权本轮推送。执行工草稿，**请 Memory 复核收口**（Memory 为 CHANGELOG 唯一写入者）。
+来源：用户要求再写一份纯净版并上传 GitHub（本轮授权推送）。经 Memory 于 2026-10-28 19:45 复核收口。
 ### Added
 - `templates/instructions-v3/`：现行 v3 纯净粘贴版（连贯完整指令，无【v3-n】增量编号）：`00-common.md`、`01`–`08` 角色文件、`90-search-plan.md`、目录 README（用法与占位符）。
 ### Changed
