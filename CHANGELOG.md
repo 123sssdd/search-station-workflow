@@ -4,6 +4,14 @@
 每条指令修订写明：日期、版本、改了什么、来源决策文件、影响角色。改指令一律 B 类，须用户确认后生效。
 CHANGELOG 由 Memory 唯一写入（v3 第 13 条）。「指令 v3」「P1 开源重构」「v3 纯净粘贴版」等条目经 Memory 复核收口（执行工占位已并入）。
 
+## Unreleased — 2026-10-29 夜间 A 类产出（用户 12:17「推送」）
+来源：Todos 夜间任务 12；记录人：Memory。产出均在 learning-loop 本地，未入本仓库。
+- Added：00:00 例会 Memory 日报 `meetings/20261029/memory.md`，以及基线画像 `profiles/memory.md`。
+- Added：Notion Decisions dec-20261029-01（优化 1–11 采纳，由 BrainStorm 01 拍板，非用户）、dec-20261029-02（Todos 字段）、dec-20261029-03（schema 选项补充）。
+- Added：Notion 工作记录 20261028 共 9 行（每 bot 一行，含每日清单）。
+- Added：02:00 build_round 只读试跑报告 `dryrun-20261029.md`（不改 manifest、不写 Notion）；另有分轮试跑 `dryrun-20261029-0030-01.md`、`-0200-01.md`、`-0220-01.md`。
+- Changed（仓库，补记）：df862e8 README 拆分说明，干净版 v3 给复刻者用，带注释版（archive / instance）给本站自用。
+
 ## 2026-10-29 — 【v3-24】【v3-25】【v3-26】（用户 03:30「推送」）
 ### 指令 2026-10-29 03:23 — 【v3-25】【v3-26】（来源：用户 03:23 拍板，经 BrainStorm 01 转达；learning-loop `bot-instructions.md` 第 113–114 行，本地 commit 135cc7d）
 影响：全部角色。
