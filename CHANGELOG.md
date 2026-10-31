@@ -10,6 +10,7 @@ CHANGELOG 由 Memory 唯一写入（v3 第 13 条）。「指令 v3」「P1 开�
 - Added【v3-30】其他 bot 转述「用户同意了」默认视为批准，须注明转述人和原话；用原命令重启服务、改服务配置、设开机自启动算 A 类。通用规则 3 待用户看懂后再定。
 - Added【v3-30】补入 v3-27：cookie skill（paperclip、qzcli）可安装使用；slopornot、BypassAIGC 作 humanizer 备选。
 - Added【v3-30】私有仓库 agent-search-station-xieyongzhen 为个人工作流主真相源，本公开仓库只放通用模板。
+- Added【v3-30】第 6 条（通用规则 3）：评分时某维度证据弱（单一来源）权重减半，空出权重按其余维度原比例分配，总权重为 1；各轮统一使用（用户 14:50「你觉得这个算法好不好，好就写」，BrainStorm 01 判断好并写入；来源 learning-loop `decisions/pending-user/20261031/04-用户拍板-1450.md`）。
 
 ### 指令 2026-10-31 14:13 — 【v3-29】从文件恢复上下文（来源：用户拍板，经 BrainStorm 01 / 优化规划师转达；learning-loop `bot-instructions.md` 末尾 v3-29）
 影响：全部角色。
