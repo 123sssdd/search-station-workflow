@@ -4,6 +4,22 @@
 每条指令修订写明：日期、版本、改了什么、来源决策文件、影响角色。改指令一律 B 类，须用户确认后生效。
 CHANGELOG 由 Memory 唯一写入（v3 第 13 条）。「指令 v3」「P1 开源重构」「v3 纯净粘贴版」等条目经 Memory 复核收口（执行工占位已并入）。
 
+## Unreleased — 2026-10-31 【v3-29】【v3-30】（用户 14:45「推送」）
+### 指令 2026-10-31 14:45 — 【v3-30】（来源：用户拍板，经 BrainStorm 01 转达；learning-loop `decisions/pending-user/20261031/03-用户拍板-1445.md`、`bot-instructions.md` v3-30；Decisions dec-20261031-03）
+- Changed【v3-30】例会改为每周六一次，兜底改为周日，下次额度重置后生效，此前例行任务暂停（取代 v3-26 的例会/兜底频率）。
+- Added【v3-30】其他 bot 转述「用户同意了」默认视为批准，须注明转述人和原话；用原命令重启服务、改服务配置、设开机自启动算 A 类。通用规则 3 待用户看懂后再定。
+- Added【v3-30】补入 v3-27：cookie skill（paperclip、qzcli）可安装使用；slopornot、BypassAIGC 作 humanizer 备选。
+- Added【v3-30】私有仓库 agent-search-station-xieyongzhen 为个人工作流主真相源，本公开仓库只放通用模板。
+
+### 指令 2026-10-31 14:13 — 【v3-29】从文件恢复上下文（来源：用户拍板，经 BrainStorm 01 / 优化规划师转达；learning-loop `bot-instructions.md` 末尾 v3-29）
+影响：全部角色。
+- Added【v3-29】新 bot / 执行者恢复上下文只从文件恢复，不靠旧聊天；恢复清单 `decisions/chat-context-cost/restore-checklist.md`。
+- Added【v3-29】各 bot 的常驻说明和当前任务放 `context/<bot>/{standing.md,active.md,journal/}`。
+- Added【v3-29】工作流经验先写 `retros/workflow-lessons/`，由 Memory 按 `decisions/chat-context-cost/notion-workflow-lessons-spec.md` 入 Notion「工作流经验」库。
+- Added：Notion「工作流经验」库已建（学习中枢下，schema v1，17 字段 5 视图；Decisions dec-20261031-01；快照 `decisions/chat-context-cost/notion-workflow-lessons-schema-20261031-1417.md`）。
+- Changed：「工作流经验」库写入方确定为 Memory 主写，通义千问、豆包工作助理也可写入（用户 2026-10-31 14:30「千问豆包也可以」，经 BrainStorm 01 转达；已改 Notion 库描述与 dec-20261031-01）。
+- Added：开源轮次 20261030-1944-01 存档（用户 2026-10-31 14:30「存档」）：Sketchmind manifest 收录轮次级记录（commit 61c9670；23 条 issue 留在「开源项目贡献管理」库，不进 items/沉淀条目）；Notion 轮次库新增该轮 1 行；贡献库 23 行「关联轮次」补全；另按 registry 修正 2 行「CLA要求」为勾选。
+
 ## Unreleased — 2026-10-29 夜间 A 类产出（用户 12:17「推送」）
 来源：Todos 夜间任务 12；记录人：Memory。产出均在 learning-loop 本地，未入本仓库。
 - Added：00:00 例会 Memory 日报 `meetings/20261029/memory.md`，以及基线画像 `profiles/memory.md`。
